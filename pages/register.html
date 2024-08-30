@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/register.css" />
+    <script src="/components/headerComponent.js" defer></script>
+    <title>APP COMIDA i2t - Registrar Usuario</title>
+  </head>
+  <style>
+    .fade-in {
+      animation: fadeIn .5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <header-component></header-component>
+    <main>
+      <div id="register-section" class="register" hidden>
+        <h3>Crear cuenta de Usuario</h3>
+        <h5>Ingrese los datos para crear su cuenta.</h5>
+        <form id="register-form">
+          <div class="register-item">
+            <input
+              type="email"
+              id="email"
+              placeholder="Correo Electrónico"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <input
+              type="password"
+              id="password"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="Ingrese nuevamente su contraseña"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <label for="tipo-documento">Tipo de Documento:</label>
+            <select id="tipo-documento" name="tipo-documento" required>
+              <option value="dni">DNI</option>
+              <option value="pasaporte">Pasaporte</option>
+              <option value="cedula">Cédula</option>
+            </select>
+          </div>
+          <div class="register-item">
+            <input
+              type="text"
+              id="documento"
+              name="documento"
+              placeholder="Documento"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <label for="terminos">
+              <input type="checkbox" id="terminos" name="terminos" required />
+              Acepto los Términos y Condiciones
+            </label>
+          </div>
+          <button type="submit" id="register-button">Registrar</button>
+        </form>
+        <div class="register-item">
+          <a class="register-item" id="register-a"
+            >¿Ya tienes cuenta? Toca aquí para ingresar.</a
+          >
+        </div>
+      </div>
+
+      <div id="login-section" class="register" hidden>
+        <h3>Entrar en su Cuenta.</h3>
+        <h5>Ingrese los datos de su cuenta para ingresar.</h5>
+        <form id="register-form">
+          <div class="register-item">
+            <input
+              type="email"
+              id="email"
+              placeholder="Correo Electrónico"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <input
+              type="password"
+              id="password"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+          <div class="register-item">
+            <label for="tipo-documento">Tipo de Documento:</label>
+            <select id="tipo-documento" name="tipo-documento" required>
+              <option value="dni">DNI</option>
+              <option value="pasaporte">Pasaporte</option>
+              <option value="cedula">Cédula</option>
+            </select>
+          </div>
+          <div class="register-item">
+            <input
+              type="text"
+              id="documento"
+              name="documento"
+              placeholder="Documento"
+              required
+            />
+          </div>
+          <button type="submit" id="register-button">Entrar</button>
+        </form>
+        <div class="register-item">
+          <a class="register-item" id="login-a"
+            >¿No tienes cuenta? Toca aqui para crear una.</a
+          >
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Escuchar el evento 'navigate' del header-component
+        document
+          .querySelector("header-component")
+          .addEventListener("navigate", (event) => {
+            const loginSection = document.getElementById("login-section");
+            const registerSection = document.getElementById("register-section");
+
+            // Manejar la navegación según el detalle del evento
+            if (event.detail === "login") {
+              loginSection.hidden = false; // Mostrar la sección de login
+              registerSection.hidden = true; // Ocultar la sección de registro
+
+              loginSection.classList.add("fade-in");
+            } else if (event.detail === "register") {
+              registerSection.hidden = false; // Mostrar la sección de registro
+              loginSection.hidden = true; // Ocultar la sección de login
+
+              registerSection.classList.add("fade-in");
+
+            } else if (event.detail === "home") {
+              loginSection.hidden = true; // Ocultar ambas secciones
+              registerSection.hidden = true;
+            }
+
+            const registerQ = document.getElementById("register-a");
+            const loginQ = document.getElementById("login-a");
+
+            loginQ.addEventListener("click", () => {
+              loginSection.hidden = true;
+              registerSection.hidden = false;
+            });
+
+            registerQ.addEventListener("click", () => {
+              loginSection.hidden = false;
+              registerSection.hidden = true;
+            });
+          });
+      });
+    </script>
+  </body>
+</html>

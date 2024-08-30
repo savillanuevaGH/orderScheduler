@@ -1,0 +1,32 @@
+@import url(/styles/header-component.css);
+
+:root {
+    --clr-mustard: #F9D263;
+    --clr-bordeau: #7F331B;
+    --clr-tomato: #EB4335;
+    --clr-l-green: #34A853;
+    --clr-d-yellow: #FBBC05;
+    --clr-varblue: #4285F4;
+    --clr-vargrey: #CAC4D0;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    line-height: calc(1rem + .5rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'General Sans', sans-serif;
+}

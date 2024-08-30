@@ -1,0 +1,49 @@
+.card {
+    display: grid;
+    grid-template-areas:
+        "imagen"
+        "card-content";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+
+    margin: 5px;
+    max-width: 400px;
+    height: 360px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+img {
+    box-sizing: border-box;
+    grid-area: imagen;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+
+    box-shadow: 0 0 5px black;
+}
+
+.card-content {
+    grid-area: card-content;
+    padding: 10px;
+}
+
+.card-title {
+    margin: 0;
+    padding: .5rem;
+
+    line-height: 1.2;
+    font-size: 1.5rem;
+}
+
+.card-description {
+    margin: 5px 0 0;
+    padding: .5rem;
+
+    line-height: 1.4;
+    font-size: 1rem;
+}

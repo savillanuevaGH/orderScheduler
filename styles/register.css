@@ -1,0 +1,84 @@
+@import url(./style.css);
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  align-items: center;
+  justify-content: center;
+}
+
+.register {
+  margin: 2rem;
+  padding: 2rem;
+  height: auto;
+  width: auto;
+  border-radius: 25px;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+
+  background-color: var(--clr-mustard);
+}
+
+.register-item {
+  margin-block: 4px;
+  padding-block: 4px;
+
+  height: max-content;
+}
+
+input {
+  padding: 0.5rem;
+  width: 90%;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(251, 189, 5, 0.8);
+  text-shadow: 0 0 1px black;
+
+  font-weight: 500;
+  color: black;
+}
+
+#terminos {
+  width: inherit;
+}
+
+label {
+  margin-inline: 10px;
+}
+
+select {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(251, 189, 5, 0.8);
+  padding: 0.2rem;
+}
+
+#register-button {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+
+  background-color: var(--clr-varblue);
+  box-shadow: 2px 2px 5px var(--clr-varblue);
+
+  &:hover {
+    background-color: #366cc4;
+    box-shadow: 2px 2px 6px #152b4e;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-varblue);
+
+  &:hover {
+    color: #366cc4;
+  }
+}

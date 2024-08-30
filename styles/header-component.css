@@ -1,0 +1,41 @@
+@import url(style.css);
+
+header {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+
+    background-color: var(--clr-mustard);
+}
+
+h2 {
+    padding: .5rem;
+
+    font-size: 2rem;
+    
+    text-shadow: 2px 2px 5px var(--clr-d-yellow);
+
+    cursor: help;
+}
+
+button {
+    margin-right: .5rem;
+    padding: .6rem;
+
+    cursor: pointer;
+
+    font-weight: 600;
+    color: white;
+
+    border-radius: 5px;
+    border: none;
+    background-color: var(--clr-bordeau);
+    box-shadow: 0 0 5px black;
+
+    &:hover {
+        background-color: #521717;
+    }
+}
