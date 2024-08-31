@@ -143,46 +143,6 @@
         </div>
       </div>
     </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Escuchar el evento 'navigate' del header-component
-        document
-          .querySelector("header-component")
-          .addEventListener("navigate", (event) => {
-            const loginSection = document.getElementById("login-section");
-            const registerSection = document.getElementById("register-section");
-
-            // Manejar la navegación según el detalle del evento
-            if (event.detail === "login") {
-              loginSection.hidden = false; // Mostrar la sección de login
-              registerSection.hidden = true; // Ocultar la sección de registro
-
-              loginSection.classList.add("fade-in");
-            } else if (event.detail === "register") {
-              registerSection.hidden = false; // Mostrar la sección de registro
-              loginSection.hidden = true; // Ocultar la sección de login
-
-              registerSection.classList.add("fade-in");
-
-            } else if (event.detail === "home") {
-              loginSection.hidden = true; // Ocultar ambas secciones
-              registerSection.hidden = true;
-            }
-
-            const registerQ = document.getElementById("register-a");
-            const loginQ = document.getElementById("login-a");
-
-            loginQ.addEventListener("click", () => {
-              loginSection.hidden = true;
-              registerSection.hidden = false;
-            });
-
-            registerQ.addEventListener("click", () => {
-              loginSection.hidden = false;
-              registerSection.hidden = true;
-            });
-          });
-      });
-    </script>
+    <script src="/js/register.js" defer></script>
   </body>
 </html>

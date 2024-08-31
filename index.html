@@ -14,4 +14,14 @@
   <body>
     <header-component></header-component>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('header-component').addEventListener('navigate', (event) => {
+        if (event.detail === 'login' || event.detail === 'register') {
+          // Redirigir a register.html si se detecta la intención de login o registro
+          window.location.assign('/pages/register.html');
+        }
+      });
+    });
+  </script>  
 </html>
