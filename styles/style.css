@@ -1,4 +1,5 @@
 @import url(/styles/header-component.css);
+@import url(/styles/products.css);
 
 :root {
     --clr-mustard: #F9D263;

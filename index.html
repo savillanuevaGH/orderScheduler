@@ -3,25 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./styles/style.css" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
       rel="stylesheet"
     />
     <script src="/components/headerComponent.js" defer></script>
+    <script src="/components/cardComponent.js" defer></script>
     <title>APP Pedidos i2t</title>
   </head>
   <body>
     <header-component></header-component>
+    <main>
+      <div class="daily-product">
+        <h4>Plato del dia (<span id="today"></span>)</h4>
+      </div>
+
+      <div class="week-products">
+        <section>
+          <h5>Lunes</h5>
+          <div class="products-container"></div>
+        </section>
+        <section>
+          <h5>Martes</h5>
+          <div class="products-container"></div>
+        </section>
+        <section>
+          <h5>Miercoles</h5>
+          <div class="products-container"></div>
+        </section>
+        <section>
+          <h5>Jueves</h5>
+          <div class="products-container"></div>
+        </section>
+        <section>
+          <h5>Viernes</h5>
+          <div class="products-container"></div>
+        </section>
+      </div>
+    </main>
   </body>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('header-component').addEventListener('navigate', (event) => {
-        if (event.detail === 'login' || event.detail === 'register') {
-          // Redirigir a register.html si se detecta la intención de login o registro
-          window.location.assign('/pages/register.html');
-        }
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .querySelector("header-component")
+        .addEventListener("navigate", (event) => {
+          if (event.detail === "login" || event.detail === "register") {
+            // Redirigir a register.html si se detecta la intención de login o registro
+            window.location.assign("/pages/register.html");
+          }
+        });
+
+      const fechaActual = document.getElementById("today");
+      const today = new Date();
+      const opciones = { year: "numeric", month: "2-digit", day: "2-digit" };
+
+      fechaActual.textContent = today.toLocaleDateString("es-ES", opciones);
     });
-  </script>  
+  </script>
 </html>

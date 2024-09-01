@@ -1,4 +1,4 @@
-<product-card
+    <product-card
       image="https://via.placeholder.com/300"
       title="Pedilo1"
       description="This is a description of Product 1. It provides information about the product."
