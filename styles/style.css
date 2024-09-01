@@ -30,4 +30,6 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'General Sans', sans-serif;
+
+    background: url('/img/appBackground.webp') no-repeat center center fixed;
 }

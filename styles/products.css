@@ -1,11 +1,14 @@
+@import url('/styles/style.css');
+
 .daily-product {
     width: 100%;
     height: max-content;
     padding: .2rem;
     text-align: justify;
 
+    color: var(--clr-tomato);
     background-color: rgba(0, 0, 0, .5);
-    text-shadow: 0 0 10px var(--clr-bordeau);
+    text-shadow: 0 0 5px var(--clr-bordeau);
 }
 
 .week-products {
@@ -18,17 +21,19 @@ section {
     width: 100%;
     height: auto;
 
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .4);
 }
 
 section h5 {
     margin: 2px;
     padding: 2px;
+    font-size: medium;
 
-    text-shadow: 0 0 6px var(--clr-d-yellow);
+    color: var(--clr-l-green);
+    text-shadow: 1px 1px 2px green;
 }
 
-.products-container {
+.products-container, .daily-product {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: minmax(200px, auto);
