@@ -11,6 +11,7 @@ class HeaderComponent extends HTMLElement {
       <div>
         <button id="login-btn">Entrar</button>
         <button id="register-btn">Registrarse</button>
+        <button id="pedidos-btn">Pedidos</button>
       </div>
     `;
 
@@ -23,6 +24,7 @@ class HeaderComponent extends HTMLElement {
 
     const loginBtn = shadow.getElementById('login-btn');
     const registerBtn = shadow.getElementById('register-btn');
+    const pedidosBtn = shadow.getElementById('pedidos-btn');
     const headerTitle = shadow.getElementById('header-title');
 
     loginBtn.addEventListener('click', () => {
@@ -35,6 +37,11 @@ class HeaderComponent extends HTMLElement {
       // Guardar selección en sessionStorage
       sessionStorage.setItem('navigateTo', 'register');
       window.location.assign('/pages/register.html');
+    });
+
+    pedidosBtn.addEventListener('click', () => {
+      // Guardar selección en sessionStorage
+      window.location.assign('/pages/pedidos.html');
     });
 
     headerTitle.addEventListener('click', () => {

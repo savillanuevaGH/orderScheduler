@@ -32,7 +32,6 @@ section h5 {
 
     color: var(--clr-l-green);
     text-shadow: 1px 1px 5px green;
-    background-color: rgba(0, 0, 0, .5);
 }
 
 .products-container, .daily-product {
