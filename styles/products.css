@@ -4,6 +4,7 @@
     width: 100%;
     height: max-content;
     padding: .2rem;
+    font-size: large;
     text-align: justify;
 
     color: var(--clr-tomato);
@@ -30,7 +31,8 @@ section h5 {
     font-size: medium;
 
     color: var(--clr-l-green);
-    text-shadow: 1px 1px 2px green;
+    text-shadow: 1px 1px 5px green;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .products-container, .daily-product {
