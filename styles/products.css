@@ -37,6 +37,6 @@ section h5 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: minmax(200px, auto);
-    gap: .5rem;
-    padding: 10px;
+    gap: 5px;
+    padding: 5px;
 }
