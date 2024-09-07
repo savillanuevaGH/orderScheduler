@@ -8,11 +8,20 @@ class HeaderComponent extends HTMLElement {
     const header = document.createElement('header');
     header.innerHTML = `
       <h2 id="header-title">APP Pedidos i2t</h2>
-      <div>
-        <button id="login-btn">Entrar</button>
-        <button id="register-btn">Registrarse</button>
-        <button id="pedidos-btn">Pedidos</button>
-      </div>
+      <ul class="menu">
+        <li>
+          <button id="login-btn">Entrar</button>
+          <button id="register-btn">Registrarse</button>
+        </li>
+        <li class="menu-item">
+          <button class="dropdown-btn">Pedidos</button>
+          <ul class="dropdown-content">
+            <li><a href="/pages/pedidos.html">Ver mis pedidos</a></li>
+            <li><a href="/pages/pedidos.html">Agregar pedido</a></li>
+            <li><a href="/pages/pedidos.html">Quitar Pedido</a></li>
+          </ul>
+        </li>
+      </ul>
     `;
 
     const linkElem = document.createElement('link');
@@ -24,8 +33,9 @@ class HeaderComponent extends HTMLElement {
 
     const loginBtn = shadow.getElementById('login-btn');
     const registerBtn = shadow.getElementById('register-btn');
-    const pedidosBtn = shadow.getElementById('pedidos-btn');
     const headerTitle = shadow.getElementById('header-title');
+    const dropdownBtn = shadow.querySelector('.dropdown-btn');
+    const menuItem = dropdownBtn.parentElement;
 
     loginBtn.addEventListener('click', () => {
       // Guardar selección en sessionStorage
@@ -39,13 +49,20 @@ class HeaderComponent extends HTMLElement {
       window.location.assign('/pages/register.html');
     });
 
-    pedidosBtn.addEventListener('click', () => {
-      // Guardar selección en sessionStorage
-      window.location.assign('/pages/pedidos.html');
-    });
-
     headerTitle.addEventListener('click', () => {
       window.location.assign('/index.html');
+    });
+
+    dropdownBtn.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevenir la propagación para evitar conflictos al cerrar
+      menuItem.classList.toggle('active'); // Alternar la clase activa para mostrar/ocultar el menú
+    });
+  
+    // Cerrar el menú desplegable si se hace clic fuera
+    document.addEventListener('click', (event) => {
+      if (!menuItem.contains(event.target)) {
+        menuItem.classList.remove('active');
+      }
     });
   }
 }
