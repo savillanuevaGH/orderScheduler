@@ -8,9 +8,20 @@ h3 {
     color: var(--clr-d-yellow);
     text-shadow: 0 0 2px gold;
     background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .8);
 }
 
-section {
-    margin-bottom: .5rem;
-    border: 1px solid black;
+.week-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.week-products section {
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, .8);
 }

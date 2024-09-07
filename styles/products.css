@@ -25,9 +25,13 @@ section {
     background-color: rgba(0, 0, 0, .4);
 }
 
+.products {
+    height: max-content;
+}
+
 section h5 {
     margin: 2px;
-    padding: 2px;
+    padding: 5px;
     font-size: medium;
 
     color: var(--clr-l-green);
@@ -36,8 +40,8 @@ section h5 {
 
 .products-container, .daily-product {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: minmax(200px, auto);
-    gap: 5px;
-    padding: 5px;
+    gap: .5rem;
+    padding: .6rem;
 }
