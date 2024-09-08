@@ -3,24 +3,31 @@
 .daily-product {
     width: 100%;
     height: max-content;
+
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#daily-product h4 {
+    width: 100%;
+    height: max-content;
     padding: .2rem;
     font-size: large;
     text-align: justify;
 
     color: var(--clr-tomato);
     background-color: rgba(0, 0, 0, .5);
-    text-shadow: 0 0 5px var(--clr-bordeau);
+    text-shadow: 1px 1px 10px tomato;
 }
 
 .week-products {
     display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: minmax(min-content, max-content); /* Ajusta la altura según el contenido */
+    gap: 1rem; /* Ajusta el espaciado entre las filas */
 }
 
 section {
-    width: 100%;
-    height: auto;
+    min-height: 0;
 
     background-color: rgba(0, 0, 0, .4);
 }
@@ -35,7 +42,8 @@ section h5 {
     font-size: medium;
 
     color: var(--clr-l-green);
-    text-shadow: 1px 1px 5px green;
+    text-shadow: 1px 1px 4px green;
+    background-color: rgba(154, 205, 50, .4);
 }
 
 .products-container, .daily-product {

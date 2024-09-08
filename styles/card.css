@@ -30,20 +30,23 @@ img {
 
 .card-content {
     grid-area: card-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
     padding: 10px;
     overflow: auto;
 }
 
 .card-title {
-    margin-top: 5px;
-    padding: .5rem;
-    line-height: 1.4;
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.2;
     font-size: 1rem;
 }
 
 .card-description {
-    margin-bottom: 10px;
-    padding: .4rem;
-    line-height: 1.4;
-    font-size: .6rem;
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.2;
+    font-size: .8rem;
 }

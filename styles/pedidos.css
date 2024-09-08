@@ -12,11 +12,13 @@ h3 {
 
 .week-products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 10px;
 }
 
 .day-section {
+  width: fit-content;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
