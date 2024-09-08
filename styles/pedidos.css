@@ -39,11 +39,18 @@ h3 {
   margin-left: 10px;
 }
 
-#dlt-btn {
+.remove-button {
   background-color: var(--clr-tomato);
+
+  &:hover {
+    background-color: #ad4532;
+  }
 }
 
-#sts-btn {
-  margin-left: 10px;
+.status-button {
   background-color: var(--clr-varblue);
+
+  &:hover {
+    background-color: #59b8dd;
+  }
 }

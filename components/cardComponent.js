@@ -12,10 +12,10 @@ class ProductCard extends HTMLElement {
       const container = document.createElement('div');
       container.innerHTML = `
         <div class="card">
-          <img src="${this.getAttribute('image')}" alt="${this.getAttribute('title')}>
+          <img src="https://via.placeholder.com/300" alt="Product Image>
           <div class="card-content">
-            <h4 class="card-title">${this.getAttribute('title')}</h4>
-            <p class="card-description">${this.getAttribute('description')}</p>
+            <h4 class="card-title">Titulo</h4>
+            <p class="card-description">Descripción</p>
           </div>
         </div>
       `;
@@ -23,6 +23,16 @@ class ProductCard extends HTMLElement {
       // Adjuntar el estilo y el contenido al Shadow DOM
       shadow.appendChild(linkElem);
       shadow.appendChild(container);
+    }
+
+    connectedCallback() {
+      const imgElement = this.shadowRoot.querySelector('img');
+      const titleElement = this.shadowRoot.querySelector('.card-title');
+      const descriptionElement = this.shadowRoot.querySelector('.card-description');
+  
+      imgElement.src = this.getAttribute('image') || 'https://via.placeholder.com/300';
+      titleElement.textContent = this.getAttribute('title') || 'Titulo';
+      descriptionElement.textContent = this.getAttribute('description') || 'Descripción';
     }
   }
   
