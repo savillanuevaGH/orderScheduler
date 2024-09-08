@@ -22,8 +22,8 @@
 .week-products {
     display: grid;
     grid-template-rows: auto;
-    grid-auto-rows: minmax(min-content, max-content); /* Ajusta la altura según el contenido */
-    gap: 1rem; /* Ajusta el espaciado entre las filas */
+    grid-auto-rows: minmax(min-content, max-content);
+    gap: 1rem;
 }
 
 section {
@@ -51,5 +51,5 @@ section h5 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: minmax(200px, auto);
     gap: .5rem;
-    padding: .6rem;
+    padding: .5rem;
 }
