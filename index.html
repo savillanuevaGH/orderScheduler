@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="/components/headerComponent.js" defer></script>
     <script src="/components/cardComponent.js" defer></script>
     <title>APP Pedidos i2t</title>
@@ -11,34 +11,20 @@
   <body>
     <header-component></header-component>
     <main>
-      <div class="daily-product">
+      <section id="daily-product">
         <h4>Plato del dia (<span id="today"></span>)</h4>
-      </div>
+        <div class="daily-product" id="daily-product-container">
+          
+        </div>
+      </section>
 
       <div class="week-products">
         <section class="products">
           <h5>Productos</h5>
-          <div class="products-container"></div>
+          <div class="products-container" id="products-container"></div>
         </section>
       </div>
     </main>
   </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document
-        .querySelector("header-component")
-        .addEventListener("navigate", (event) => {
-          if (event.detail === "login" || event.detail === "register") {
-            // Redirigir a register.html si se detecta la intención de login o registro
-            window.location.assign("/pages/register.html");
-          }
-        });
-
-      const fechaActual = document.getElementById("today");
-      const today = new Date();
-      const opciones = { year: "numeric", month: "2-digit", day: "2-digit" };
-
-      fechaActual.textContent = today.toLocaleDateString("es-ES", opciones);
-    });
-  </script>
+  <script src="/js/index.js" defer></script>
 </html>
