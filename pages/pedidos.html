@@ -1,70 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APP Pedidos i2t - Pedidos</title>
-    <link rel="stylesheet" href="/styles/pedidos.css"/>
-    <script src="/components/headerComponent.js" defer></script>
-    <script src="/components/cardComponent.js" defer></script>
-  </head>
-  <body>
-    <header-component></header-component>
-    <main>
-      <h3>MIS PEDIDOS:</h3>
-
-      <div class="week-products">
-        <section>
-          <h5>Lunes</h5>
-          <div class="products-container">
-            <product-card
-              image="https://via.placeholder.com/300"
-              title="Pedilo Lunes"
-              description="This is a description of Product 1. It provides information about the product."
-            ></product-card>
-          </div>
-        </section>
-        <section>
-          <h5>Martes</h5>
-          <div class="products-container">
-            <product-card
-              image="https://via.placeholder.com/300"
-              title="Pedilo Martes"
-              description="This is a description of Product 1. It provides information about the product."
-            ></product-card>
-          </div>
-        </section>
-        <section>
-          <h5>Miercoles</h5>
-          <div class="products-container">
-            <product-card
-              image="https://via.placeholder.com/300"
-              title="Pedilo Miercoles"
-              description="This is a description of Product 1. It provides information about the product."
-            ></product-card>
-          </div>
-        </section>
-        <section>
-          <h5>Jueves</h5>
-          <div class="products-container">
-            <product-card
-              image="https://via.placeholder.com/300"
-              title="Pedilo Jueves"
-              description="This is a description of Product 1. It provides information about the product."
-            ></product-card>
-          </div>
-        </section>
-        <section>
-          <h5>Viernes</h5>
-          <div class="products-container">
-            <product-card
-              image="https://via.placeholder.com/300"
-              title="Pedilo Viernes"
-              description="This is a description of Product 1. It provides information about the product."
-            ></product-card>
-          </div>
-        </section>
-      </div>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APP Pedidos i2t - Pedidos</title>
+  <link rel="stylesheet" href="/styles/pedidos.css"/>
+  <script src="/components/headerComponent.js" defer></script>
+  <script src="/js/pedidos.js" defer></script>
+  <script src="/components/cardComponent.js" defer></script>
+</head>
+<body>
+  <header-component></header-component>
+  <main>
+    <h3>MIS PEDIDOS:</h3>
+    <div id="week-products" class="week-products"></div>
+  </main>
+</body>
 </html>

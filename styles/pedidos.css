@@ -2,26 +2,48 @@
 @import url(/styles/products.css);
 
 h3 {
-    padding: 10px;
+    padding: .5rem;
     margin-bottom: .5rem;
 
     color: var(--clr-d-yellow);
-    text-shadow: 0 0 2px gold;
-    background-color: rgba(0, 0, 0, .6);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .8);
+    text-shadow: 1px 1px 5px gold;
+    background-color: rgba(0, 0, 0, .8);
 }
 
 .week-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 5px;
-    max-width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-.week-products section {
-    border-radius: 5%;
-    background-color: rgba(0, 0, 0, .8);
+.day-section {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+}
+
+.day-section h5 {
+  margin: 0;
+}
+
+.products-container {
+  margin-top: 10px;
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.action-buttons button {
+  margin-left: 10px;
+}
+
+#dlt-btn {
+  background-color: var(--clr-tomato);
+}
+
+#sts-btn {
+  margin-left: 10px;
+  background-color: var(--clr-varblue);
 }
