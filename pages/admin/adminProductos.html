@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Pedidos i2t - Administrar Productos</title>
+    <link rel="stylesheet" href="/styles/adminProducts.css">
+    <script src="/components/headerComponent.js" defer></script>
+</head>
+<body>
+    <header-component></header-component>
+<main>
+    <section class="products">
+        <form id="products-form" class="products-form">
+            <h3>Subir producto</h3>
+
+            <div class="form-item">
+                <h5>Foto del Producto</h5>
+                <input type="file" name="productImage" id="productImage" accept="image/*">
+            </div>
+
+            <div class="form-item">
+                <input type="text" name="Nombre" id="productName" placeholder="Nombre del producto" required>
+            </div>
+            <div class="form-item">
+                <input type="text" name="Descripcion" id="productDescription" placeholder="Descripcion del producto">
+            </div>
+            <div class="form-item">
+                <button type="submit" id="submitBtn">Subir Producto</button>
+                <button type="submit" id="submitDPBtn">Subir como Producto del Dia</button>
+            </div>
+        </form>
+    </section>
+</main>
+</body>
+</html>
