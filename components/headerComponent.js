@@ -19,6 +19,7 @@ class HeaderComponent extends HTMLElement {
             <li><a href="/pages/pedidos.html">Ver mis pedidos</a></li>
             <li><a href="/pages/pedidos.html">Agregar pedido</a></li>
             <li><a href="/pages/pedidos.html">Quitar Pedido</a></li>
+            <li><a href="/pages/admin/adminProductos.html" id="adminProducts">Administrar Productos</a></li>
           </ul>
         </li>
       </ul>

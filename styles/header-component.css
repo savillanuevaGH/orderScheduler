@@ -40,6 +40,14 @@ button {
   }
 }
 
+#adminProducts {
+  background-color: #ddba58;
+
+  &:hover {
+    background-color: #b39646;
+  }
+}
+
 .menu {
   list-style: none;
   padding: 0;
