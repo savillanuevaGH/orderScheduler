@@ -15,6 +15,28 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
   padding: 10px;
+  margin-bottom: 1rem;
+
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+
+  color: yellow;
+  text-shadow: 1px 1px 5px goldenrod;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.editBtn {
+  background-color: var(--clr-varblue);
+
+  &:hover {
+    background-color: dodgerblue;
+  }
 }
 
 .day-section {
@@ -31,28 +53,4 @@ h3 {
 
 .products-container {
   margin-top: 10px;
-}
-
-.action-buttons {
-  margin-top: 10px;
-}
-
-.action-buttons button {
-  margin-left: 10px;
-}
-
-.remove-button {
-  background-color: var(--clr-tomato);
-
-  &:hover {
-    background-color: #ad4532;
-  }
-}
-
-.status-button {
-  background-color: var(--clr-varblue);
-
-  &:hover {
-    background-color: #59b8dd;
-  }
 }
