@@ -1,52 +1,88 @@
 .card {
-    display: grid;
-    grid-template-areas:
-        "imagen"
-        "card-content";
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-areas:
+    "imagen"
+    "card-content";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
 
-    margin: 5px;
-    max-width: 200px;
-    min-height: 200px;
-    background-color: rgba(120, 120, 120, 0.5);
-    border: 1px solid black;
-    border-radius: 5px;
+  margin: 5px;
+  max-width: 200px;
+  min-height: 200px;
+  background-color: rgba(120, 120, 120, 0.5);
+  border: 1px solid black;
+  border-radius: 5px;
 
-    overflow: hidden;
-    box-sizing: border-box;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 img {
-    box-sizing: border-box;
-    grid-area: imagen;
-    width: 100%;
-    height: auto; 
-    max-height: 100px;
-    object-fit: cover;
+  box-sizing: border-box;
+  grid-area: imagen;
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: cover;
 
-    box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
 }
 
 .card-content {
-    grid-area: card-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding: 10px;
-    overflow: auto;
+  grid-area: card-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 10px;
+  overflow: auto;
 }
 
 .card-title {
-    margin: 0;
-    padding: 0.3rem 0.5rem;
-    line-height: 1.2;
-    font-size: 1rem;
+  margin: 0;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.2;
+  font-size: 1rem;
 }
 
 .card-description {
-    margin: 0;
-    padding: 0.3rem 0.5rem;
-    line-height: 1.2;
-    font-size: .8rem;
+  margin: 0;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.2;
+  font-size: 0.8rem;
+}
+
+.week-day-info {
+  text-align: center;
+
+  font-weight: bold;
+  font-size: small;
+  margin-top: 5px;
+
+  color: white;
+  background-color: var(--clr-d-yellow);
+}
+
+.add-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
 }

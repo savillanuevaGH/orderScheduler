@@ -1,47 +1,49 @@
+@import url(/styles/modal.css);
 @import url(/styles/header-component.css);
 
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap");
 
 :root {
-    --clr-mustard: #F9D263;
-    --clr-bordeau: #7F331B;
-    --clr-tomato: #EB4335;
-    --clr-l-green: #34A853;
-    --clr-d-yellow: #FBBC05;
-    --clr-varblue: #4285F4;
-    --clr-vargrey: #CAC4D0;
+  --clr-mustard: #f9d263;
+  --clr-bordeau: #7f331b;
+  --clr-tomato: #eb4335;
+  --clr-l-green: #34a853;
+  --clr-d-yellow: #fbbc05;
+  --clr-varblue: #4285f4;
+  --clr-vargrey: #cac4d0;
 }
 
 *,
 ::before,
 ::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    line-height: calc(1rem + .5rem);
-    box-sizing: border-box;
+  margin: 0;
+  line-height: calc(1rem + 0.5rem);
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin: 0;
-    min-height: 100vh;
+  margin: 0;
+  min-height: 100vh;
 
-    font-family: 'General Sans', sans-serif;
+  font-family: "General Sans", sans-serif;
 
-    background: url('/img/appBackground.webp') no-repeat center center fixed;
+  background: url("/img/appBackground.webp") no-repeat center center fixed;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

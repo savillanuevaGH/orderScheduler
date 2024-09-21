@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css"/>
-    <link rel="stylesheet" href="/styles/products.css">
+    <link rel="stylesheet" href="./styles/products.css">
+    <script src="/js/modal.js" defer></script>
     <script src="/components/headerComponent.js" defer></script>
     <script src="/components/cardComponent.js" defer></script>
     <title>APP Pedidos i2t</title>
@@ -26,6 +27,31 @@
         </section>
       </div>
     </main>
+
+    <div id="week-day-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h3>Agregar producto</h3>
+        <label for="week-select">Selecciona la semana:</label>
+        <select id="week-select">
+          <option value="1">Semana 1</option>
+          <option value="2">Semana 2</option>
+          <option value="3">Semana 3</option>
+          <option value="4">Semana 4</option>
+        </select>
+  
+        <label for="day-select">Selecciona el día:</label>
+        <select id="day-select">
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+        </select>
+  
+        <button id="add-product-button">Agregar Producto</button>
+      </div>
+    </div>
   </body>
   <script src="/js/index.js" defer></script>
 </html>
