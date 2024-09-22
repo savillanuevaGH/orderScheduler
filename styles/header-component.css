@@ -98,7 +98,7 @@ button {
 
   &:hover {
     background-color: #ddba58;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -116,7 +116,7 @@ button {
 }
 
 .menu-toggle {
-  display: none; 
+  display: none;
 }
 
 /* Media Queries */
@@ -132,7 +132,7 @@ button {
   }
 
   .menu.show {
-    display: flex
+    display: flex;
   }
 
   .menu-toggle {
@@ -150,9 +150,9 @@ button {
 
   .menu button {
     width: auto;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
-  
+
   .menu button {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;

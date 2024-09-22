@@ -2,12 +2,12 @@
 @import url(/styles/products.css);
 
 h3 {
-    padding: .5rem;
-    margin-bottom: .5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 
-    color: var(--clr-d-yellow);
-    text-shadow: 1px 1px 5px gold;
-    background-color: rgba(0, 0, 0, .8);
+  color: var(--clr-d-yellow);
+  text-shadow: 1px 1px 5px gold;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .week-products {
@@ -17,18 +17,18 @@ h3 {
   padding: 10px;
   margin-bottom: 1rem;
 
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem;
+  padding: 0.5rem;
 
   color: yellow;
   text-shadow: 1px 1px 5px goldenrod;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .day-section {
@@ -49,26 +49,26 @@ h3 {
 
 @media (max-width: 768px) {
   .week-products {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-  
+
   .heading {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .day-section {
-      width: 100%;
-      margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
 @media (max-width: 480px) {
   h3 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .day-section {
-      padding: 5px;
+    padding: 5px;
   }
 }
