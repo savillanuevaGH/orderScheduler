@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Si no hay productos, mostrar un mensaje
   if (storedProducts.length === 0) {
-    weekProductsContainer.innerHTML = '<p>No hay productos agregados.</p>';
+    weekProductsContainer.innerHTML = '<p>No hay productos agregados...</p>';
   }
 });

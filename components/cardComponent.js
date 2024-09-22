@@ -19,6 +19,7 @@ class ProductCard extends HTMLElement {
           <button class="add-button">+</button>
         </div>
         <div class="week-day-info" style="display:none;"></div>
+        <button class="view-product-btn" style="display:none;">Ver Producto</button>
       </div>
     `;
 
@@ -28,8 +29,22 @@ class ProductCard extends HTMLElement {
 
   setWeekDay(week, day) {
     const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
+    const viewProductBtn = this.shadowRoot.querySelector('.view-product-btn');
+    const addButton = this.shadowRoot.querySelector('.add-button');
+    
+    // Mostrar la información de la semana y el día
     weekDayInfo.style.display = 'block';
     weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${day}`;
+    
+    // Mostrar el botón "Ver Producto" y ocultar el botón "Agregar"
+    viewProductBtn.style.display = 'block';
+    addButton.style.display = 'none';  // Ocultar el botón "Agregar"
+    
+    viewProductBtn.textContent = 'Ver Producto en Pedidos';
+    viewProductBtn.addEventListener('click', () => {
+      window.location.href = `/pages/pedidos.html?week=${week}&day=${day}`;
+    });
+
     this.setAttribute('week', week);
     this.setAttribute('day', day);
   }
@@ -40,6 +55,7 @@ class ProductCard extends HTMLElement {
     const descriptionElement = this.shadowRoot.querySelector('.card-description');
     const addButton = this.shadowRoot.querySelector('.add-button');
     const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
+    const viewProductBtn = this.shadowRoot.querySelector('.view-product-btn');
 
     imgElement.src = this.getAttribute('image') || 'https://via.placeholder.com/300';
     titleElement.textContent = this.getAttribute('title') || 'Titulo';
@@ -50,6 +66,8 @@ class ProductCard extends HTMLElement {
     if (week && day) {
       weekDayInfo.style.display = 'block';
       weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${day}`;
+      viewProductBtn.style.display = 'block';
+      addButton.style.display = 'none';  // Ocultar el botón "Agregar" si ya tiene semana y día
     }
 
     const showAddButton = this.getAttribute('show-add-button') === 'true';

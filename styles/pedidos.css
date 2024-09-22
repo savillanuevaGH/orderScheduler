@@ -20,6 +20,22 @@ h3 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+p {
+  width: fit-content;
+  padding: .3rem;
+  margin: .2rem;
+
+  font-size: 1.2rem;
+  font-family: monospace;
+
+  color: var(--clr-d-yellow);
+  background-color: rgba(220, 220, 220, .3);
+
+  &::after {
+    content: '..';
+  }
+}
+
 .heading {
   display: flex;
   align-items: center;

@@ -2,15 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('week-day-modal');
   const closeModalBtn = document.getElementById('close-modal');
   const addProductBtn = document.getElementById('add-product-button');
-  let currentProductCard = null; // Variable para almacenar la referencia al card seleccionado
+  let currentProductCard = null;
 
   // Escuchar el evento personalizado "open-modal"
   document.addEventListener('open-modal', (event) => {
     currentProductCard = event.detail.card; // Guardar la referencia al product-card
-    modal.style.display = 'flex'; // Mostrar el modal
+    modal.style.display = 'flex';
   });
 
-  // Cerrar el modal
   closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
   });
@@ -28,7 +27,6 @@ addProductBtn.addEventListener('click', () => {
     const selectedWeek = document.querySelector('#week-select').value;
     const selectedDayText = document.querySelector('#day-select').value;
 
-    // Convertir el día de texto a número usando el mapeo
     const selectedDay = dayIndexMapping[selectedDayText];
 
     // Actualizar el product-card seleccionado
@@ -40,8 +38,8 @@ addProductBtn.addEventListener('click', () => {
         title: currentProductCard.getAttribute('title'),
         image: currentProductCard.getAttribute('image'),
         description: currentProductCard.getAttribute('description'),
-        week: parseInt(selectedWeek, 10), // Asegúrate también de convertir la semana
-        day: selectedDay // Usar el número convertido
+        week: parseInt(selectedWeek, 10),
+        day: selectedDay
       };
 
       let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
@@ -49,7 +47,7 @@ addProductBtn.addEventListener('click', () => {
       localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
     }
 
-    modal.style.display = 'none'; // Cerrar el modal
+    modal.style.display = 'none';
     alert(`Producto "${currentProductCard.getAttribute('title')}" agregado a la Semana ${selectedWeek}, Día ${selectedDay}`);
   });
 });
