@@ -22,17 +22,14 @@ class ProductCard extends HTMLElement {
       </div>
     `;
 
-    // Adjuntar el estilo y el contenido al Shadow DOM
     shadow.appendChild(linkElem);
     shadow.appendChild(container);
-    
-    this.cardContainer = container;
-    this.weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
   }
 
   setWeekDay(week, day) {
-    this.weekDayInfo.style.display = 'block';
-    this.weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${day}`;
+    const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
+    weekDayInfo.style.display = 'block';
+    weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${day}`;
     this.setAttribute('week', week);
     this.setAttribute('day', day);
   }
@@ -42,30 +39,31 @@ class ProductCard extends HTMLElement {
     const titleElement = this.shadowRoot.querySelector('.card-title');
     const descriptionElement = this.shadowRoot.querySelector('.card-description');
     const addButton = this.shadowRoot.querySelector('.add-button');
+    const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
 
-    // Asignar atributos de la tarjeta
     imgElement.src = this.getAttribute('image') || 'https://via.placeholder.com/300';
     titleElement.textContent = this.getAttribute('title') || 'Titulo';
     descriptionElement.textContent = this.getAttribute('description') || 'Descripción';
 
-    // Mostrar información de la semana y el día si están disponibles
     const week = this.getAttribute('week');
     const day = this.getAttribute('day');
     if (week && day) {
-      this.setWeekDay(week, day);
+      weekDayInfo.style.display = 'block';
+      weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${day}`;
     }
 
-    addButton.addEventListener('click', () => {
-      const event = new CustomEvent('open-modal', {
-        detail: {
-          cardTitle: this.getAttribute('title'),
-          card: this // Guardar referencia a esta tarjeta
-        }
+    const showAddButton = this.getAttribute('show-add-button') === 'true';
+    addButton.style.display = showAddButton ? 'block' : 'none';
+
+    if (showAddButton) {
+      addButton.addEventListener('click', () => {
+        const addProductEvent = new CustomEvent('open-modal', {
+          detail: { card: this }
+        });
+        document.dispatchEvent(addProductEvent);
       });
-      document.dispatchEvent(event); // Disparar el evento para abrir el modal
-    });
-  }    
+    }
+  }
 }
 
-// Definir el nuevo elemento
 customElements.define('product-card', ProductCard);

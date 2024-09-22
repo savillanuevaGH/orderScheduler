@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       productCard.setAttribute('image', product.strMealThumb);
       productCard.setAttribute('title', product.strMeal);
       productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
+      productCard.setAttribute('show-add-button', 'true');
   
       productoDelDiaContainer.appendChild(productCard);
     }
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
+        productCard.setAttribute('show-add-button', 'true');
   
         productGrid.appendChild(productCard);
       });
