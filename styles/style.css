@@ -30,20 +30,7 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-
-  margin: 0;
-  min-height: 100vh;
-
   font-family: "General Sans", sans-serif;
 
   background: url("/img/appBackground.webp") no-repeat center center fixed;
-}
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }

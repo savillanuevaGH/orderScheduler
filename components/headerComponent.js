@@ -1,4 +1,3 @@
-// header-component.js
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
@@ -8,21 +7,22 @@ class HeaderComponent extends HTMLElement {
     const header = document.createElement('header');
     header.innerHTML = `
       <h2 id="header-title">APP Pedidos i2t</h2>
-      <ul class="menu">
-        <li>
-          <button id="login-btn">Entrar</button>
-          <button id="register-btn">Registrarse</button>
-        </li>
-        <li class="menu-item">
-          <button class="dropdown-btn">Pedidos</button>
-          <ul class="dropdown-content">
-            <li><a href="/pages/pedidos.html">Ver mis pedidos</a></li>
-            <li><a href="/pages/pedidos.html">Agregar pedido</a></li>
-            <li><a href="/pages/pedidos.html">Quitar Pedido</a></li>
-            <li><a href="/pages/admin/adminProductos.html" id="adminProducts">Administrar Productos</a></li>
-          </ul>
-        </li>
-      </ul>
+      <div class="menu-container">
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <ul class="menu">
+          <li>
+            <button id="login-btn">Entrar</button>
+            <button id="register-btn">Registrarse</button>
+          </li>
+          <li class="menu-item">
+            <button class="dropdown-btn">Pedidos</button>
+            <ul class="dropdown-content">
+              <li><a href="/pages/pedidos.html">Ver mis pedidos</a></li>
+              <li><a href="/pages/admin/adminProductos.html" id="adminProducts">Administrar Productos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     `;
 
     const linkElem = document.createElement('link');
@@ -37,15 +37,14 @@ class HeaderComponent extends HTMLElement {
     const headerTitle = shadow.getElementById('header-title');
     const dropdownBtn = shadow.querySelector('.dropdown-btn');
     const menuItem = dropdownBtn.parentElement;
+    const menuToggle = shadow.getElementById('menu-toggle');
 
     loginBtn.addEventListener('click', () => {
-      // Guardar selección en sessionStorage
       sessionStorage.setItem('navigateTo', 'login');
       window.location.assign('/pages/register.html');
     });
     
     registerBtn.addEventListener('click', () => {
-      // Guardar selección en sessionStorage
       sessionStorage.setItem('navigateTo', 'register');
       window.location.assign('/pages/register.html');
     });
@@ -55,15 +54,20 @@ class HeaderComponent extends HTMLElement {
     });
 
     dropdownBtn.addEventListener('click', (event) => {
-      event.stopPropagation(); // Prevenir la propagación para evitar conflictos al cerrar
-      menuItem.classList.toggle('active'); // Alternar la clase activa para mostrar/ocultar el menú
+      event.stopPropagation();
+      menuItem.classList.toggle('active');
     });
-  
+
     // Cerrar el menú desplegable si se hace clic fuera
     document.addEventListener('click', (event) => {
       if (!menuItem.contains(event.target)) {
         menuItem.classList.remove('active');
       }
+    });
+
+    menuToggle.addEventListener('click', () => {
+      const menu = shadow.querySelector('.menu');
+      menu.classList.toggle('show');
     });
   }
 }

@@ -11,47 +11,47 @@
     <title>APP Pedidos i2t</title>
   </head>
   <body>
-    <header-component></header-component>
-    <main>
-      <section id="daily-product">
-        <h4>Plato del dia (<span id="today"></span>)</h4>
-        <div class="daily-product" id="daily-product-container">
-          
-        </div>
-      </section>
-
-      <div class="week-products">
-        <section class="products">
-          <h5>Productos</h5>
-          <div class="products-container" id="products-container"></div>
+      <header-component></header-component>
+      <main>
+        <section id="daily-product">
+          <h4>Plato del dia (<span id="today"></span>)</h4>
+          <div class="daily-product" id="daily-product-container">
+            
+          </div>
         </section>
-      </div>
-    </main>
-
-    <div id="week-day-modal" class="modal">
-      <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <h3>Agregar producto</h3>
-        <label for="week-select">Selecciona la semana:</label>
-        <select id="week-select">
-          <option value="1">Semana 1</option>
-          <option value="2">Semana 2</option>
-          <option value="3">Semana 3</option>
-          <option value="4">Semana 4</option>
-        </select>
   
-        <label for="day-select">Selecciona el día:</label>
-        <select id="day-select">
-          <option value="Lunes">Lunes</option>
-          <option value="Martes">Martes</option>
-          <option value="Miércoles">Miércoles</option>
-          <option value="Jueves">Jueves</option>
-          <option value="Viernes">Viernes</option>
-        </select>
+        <div class="week-products">
+          <section class="products">
+            <h5>Productos</h5>
+            <div class="products-container" id="products-container"></div>
+          </section>
+        </div>
+      </main>
   
-        <button id="add-product-button">Agregar Producto</button>
+      <div id="week-day-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span>
+          <h3>Agregar producto</h3>
+          <label for="week-select">Selecciona la semana:</label>
+          <select id="week-select">
+            <option value="1">Semana 1</option>
+            <option value="2">Semana 2</option>
+            <option value="3">Semana 3</option>
+            <option value="4">Semana 4</option>
+          </select>
+    
+          <label for="day-select">Selecciona el día:</label>
+          <select id="day-select">
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+          </select>
+    
+          <button id="add-product-button">Agregar Producto</button>
+        </div>
       </div>
-    </div>
   </body>
   <script src="/js/index.js" defer></script>
 </html>
