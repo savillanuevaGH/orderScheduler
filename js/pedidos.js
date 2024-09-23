@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Recuperar los productos del localStorage
-  const storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
+  let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
   console.log('Productos almacenados:', storedProducts);
 
   if (storedProducts.length === 0) {
@@ -61,6 +61,31 @@ document.addEventListener('DOMContentLoaded', () => {
           productCard.setAttribute('image', product.image);
           productCard.setAttribute('description', product.description);
           productCard.setAttribute('show-add-button', 'false');
+          productCard.setAttribute('show-del-button', 'true');
+
+          // Manejo del botón de eliminar
+          productCard.shadowRoot.querySelector('.del-button').addEventListener('click', () => {
+            // Confirmar la eliminación
+            if (confirm(`¿Eliminar el producto ${product.title}?`)) {
+              // Eliminar del localStorage
+              storedProducts = storedProducts.filter(p => p.title !== product.title);
+              localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
+              
+              // Remover del DOM
+              productCard.remove();
+              
+              // Si ya no quedan productos en esta sección, eliminarla
+              if (productsContainer.children.length === 0) {
+                section.remove();
+              }
+              
+              // Si ya no quedan productos en la semana, eliminar el contenedor de la semana
+              if (!weekContainer.querySelector('.day-section')) {
+                weekContainer.remove();
+              }
+            }
+          });
+
           productsContainer.appendChild(productCard);
         });
       }

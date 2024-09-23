@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productCard.setAttribute('title', product.strMeal);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
         productCard.setAttribute('show-add-button', 'true');
+        productCard.setAttribute('show-del-button', 'false');
   
         modalProductsContainer.appendChild(productCard);
       });

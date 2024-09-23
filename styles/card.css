@@ -85,7 +85,7 @@ img {
   background-color: var(--clr-d-yellow);
 }
 
-.add-button {
+.add-button, .del-button {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -100,4 +100,8 @@ img {
   color: white;
   border: none;
   border-radius: 50%;
+}
+
+.del-button {
+  background-color: var(--clr-tomato);
 }
