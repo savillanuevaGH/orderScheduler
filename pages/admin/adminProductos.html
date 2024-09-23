@@ -6,11 +6,13 @@
     <title>APP Pedidos i2t - Administrar Productos</title>
     <link rel="stylesheet" href="/styles/adminProducts.css">
     <script src="/components/headerComponent.js" defer></script>
+    <script src="/components/cardComponent.js"></script>
+    <script src="/js/adminProducts.js" defer></script>
 </head>
 <body>
     <header-component></header-component>
 <main>
-    <section class="products">
+    <section class="products-add">
         <form id="products-form" class="products-form">
             <h3>Subir producto</h3>
 
@@ -32,5 +34,15 @@
         </form>
     </section>
 </main>
+
+    <button id="openModalBtn">Ver Productos</button>
+    <!-- Modal para ver los productos -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Selecciona un Producto</h4>
+        <div id="modal-container" class="product-grid"></div>
+      </div>
+    </div>
 </body>
 </html>
