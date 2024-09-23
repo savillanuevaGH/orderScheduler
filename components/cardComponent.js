@@ -51,7 +51,7 @@ class ProductCard extends HTMLElement {
     this.remove(); // Eliminar el elemento del DOM
   }
 
-  setWeekDay(week, day) {
+  setWeekDay(week, day, text) {
     const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
     const viewProductBtn = this.shadowRoot.querySelector('.view-product-btn');
     const addButton = this.shadowRoot.querySelector('.add-button');
@@ -59,7 +59,7 @@ class ProductCard extends HTMLElement {
     
     // Mostrar la información de la semana y el día
     weekDayInfo.style.display = 'block';
-    weekDayInfo.textContent = 'Agregado a: Semana ${week}, Día ${day}';
+    weekDayInfo.textContent = `Agregado a: Semana ${week}, Día ${text}`;
     
     // Mostrar el botón "Ver Producto" y ocultar el botón "Agregar"
     viewProductBtn.style.display = 'block';
@@ -68,7 +68,7 @@ class ProductCard extends HTMLElement {
     
     viewProductBtn.textContent = 'Ver Producto en Pedidos';
     viewProductBtn.addEventListener('click', () => {
-      window.location.href = '/pages/pedidos.html?week=${week}&day=${day}';
+      window.location.href = '/pages/pedidos.html';
     });
 
     this.setAttribute('week', week);

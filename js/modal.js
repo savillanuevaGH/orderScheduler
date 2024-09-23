@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Miércoles': 3,
     'Jueves': 4,
     'Viernes': 5
-};
+  };
 
 // Al seleccionar el día, utiliza el mapeo
 addProductBtn.addEventListener('click', () => {
@@ -31,7 +31,7 @@ addProductBtn.addEventListener('click', () => {
 
     // Actualizar el product-card seleccionado
     if (currentProductCard) {
-      currentProductCard.setWeekDay(selectedWeek, selectedDay);
+      currentProductCard.setWeekDay(selectedWeek, selectedDay, selectedDayText);
       
       // Guardar el producto actualizado en localStorage
       const productData = {
