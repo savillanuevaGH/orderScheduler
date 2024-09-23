@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addProductBtn.addEventListener('click', () => {
     const selectedWeek = document.querySelector('#week-select').value;
     const selectedDayText = document.querySelector('#day-select').value;
+    const observationText = document.querySelector('#observation').value;
 
     const selectedDay = dayIndexMapping[selectedDayText];
 
@@ -58,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
         image: currentProductCard.getAttribute('image'),
         description: currentProductCard.getAttribute('description'),
         week: parseInt(selectedWeek, 10),
-        day: selectedDay
+        day: selectedDay,
+        observation: observationText
       };
 
       let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
