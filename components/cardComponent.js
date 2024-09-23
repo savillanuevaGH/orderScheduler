@@ -38,9 +38,27 @@ class ProductCard extends HTMLElement {
     let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
 
     // Filtrar el producto a eliminar
+    const productToRemove = storedProducts.find(product => 
+      product.title === title && product.week == week && product.day == day
+    );
+
+    // Filtrar el producto a eliminar
     storedProducts = storedProducts.filter(product => 
       !(product.title === title && product.week == week && product.day == day)
     );
+
+    // Guardar el producto eliminado en el historial
+    if (productToRemove) {
+      const removalDate = new Date().toLocaleDateString('es-ES');
+      const productHistory = {
+        ...productToRemove,
+        removalDate: removalDate
+      };
+
+      let productHistoryList = JSON.parse(localStorage.getItem('productHistory')) || [];
+      productHistoryList.push(productHistory);
+      localStorage.setItem('productHistory', JSON.stringify(productHistoryList));
+    }
 
     // Guardar los productos actualizados en localStorage
     localStorage.setItem('storedProducts', JSON.stringify(storedProducts));

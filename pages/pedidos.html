@@ -14,7 +14,10 @@
   <body>
     <header-component></header-component>
     <main>
-      <h3>MIS PEDIDOS:</h3>
+      <div class="mis-pedidos">
+        <h3>MIS PEDIDOS:</h3>
+        <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
+      </div>
       <div id="week-products"></div>
     </main>
     <button id="openModalBtn">Agregar Producto</button>
@@ -25,6 +28,14 @@
         <span class="close">&times;</span>
         <h4>Selecciona un Producto</h4>
         <div id="modal-products-container" class="product-grid"></div>
+      </div>
+    </div>
+    <!-- Modal para ver el historial de pedidos -->
+    <div id="historyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-history" id="close-history">&times;</span>
+        <h4>Historial de Pedidos</h4>
+        <div id="history-container"></div>
       </div>
     </div>
 
