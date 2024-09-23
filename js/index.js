@@ -80,4 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
       fechaActual.textContent = today.toLocaleDateString('es-ES', opciones);
     }
   });
-  
