@@ -52,7 +52,7 @@ class HeaderComponent extends HTMLElement {
     });
 
     profileBtn.addEventListener('click', () => {
-      window.location.assign('pages/profile.html')
+      window.location.assign('/pages/profile.html')
     })
 
     headerTitle.addEventListener('click', () => {

@@ -27,11 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     historyModal.style.display = 'none';
   }
 
-  // Agregar evento al botón para abrir el modal del historial de pedidos
-  document.getElementById('openHistoryModalBtn').addEventListener('click', openHistoryModal);
+  if (window.location.pathname === '/pages/pedidos.html' ||  window.location.pathname === '/pages/profile.html') {
+    // Agregar evento al botón para abrir el modal del historial de pedidos
+    document.getElementById('openHistoryModalBtn').addEventListener('click', openHistoryModal);
 
-  // Agregar evento al botón para cerrar el modal del historial de pedidos
-  document.getElementById('close-history').addEventListener('click', closeHistoryModal);
+    // Agregar evento al botón para cerrar el modal del historial de pedidos
+    document.getElementById('close-history').addEventListener('click', closeHistoryModal);
+  };
+
+  
 
   const dayIndexMapping = {
     'Lunes': 1,
@@ -79,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     historyContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
 
     if (productHistoryList.length === 0) {
-      historyContainer.innerHTML = '<h6>No hay productos en el historial...</h6>';
+      historyContainer.innerHTML = '<h5>No hay productos en el historial...</h5>';
       return;
     }
 
