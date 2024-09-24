@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mapeo de dias de la semana a enteros
   const dayIndexMapping = {
     'Lunes': 1,
     'Martes': 2,

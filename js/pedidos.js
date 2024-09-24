@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (productsForDay.length > 0) {
         hasProducts = true;
         productsForDay.forEach(product => {
+          // Crea una productCard y asigna los datos recuperados de localStorage
           const productCard = document.createElement('product-card');
           productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
           productCard.setAttribute('title', product.title);

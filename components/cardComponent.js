@@ -3,7 +3,7 @@ class ProductCard extends HTMLElement {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
 
-    // Crear y agregar el estilo
+   // Une el componente con los estilos externos
     const linkElem = document.createElement('link');
     linkElem.setAttribute('rel', 'stylesheet');
     linkElem.setAttribute('href', '/styles/card.css');
@@ -96,6 +96,7 @@ class ProductCard extends HTMLElement {
     this.setAttribute('day', day);
   }
 
+  // Inicializa y configura el cardComponent cuando se conecte al DOM
   connectedCallback() {
     const stockElement = this.shadowRoot.querySelector('.stock');
     const imgElement = this.shadowRoot.querySelector('img');
@@ -127,8 +128,10 @@ class ProductCard extends HTMLElement {
     delButton.style.display = showDelButton ? 'block' : 'none';
 
     if (showAddButton) {
+      // Funcionalidad del botón agregar
       addButton.addEventListener('click', () => {
         const addProductEvent = new CustomEvent('open-modal', {
+          // Envia el cardProduct/Producto seleccionado
           detail: { card: this }
         });
         document.dispatchEvent(addProductEvent);
@@ -145,4 +148,5 @@ class ProductCard extends HTMLElement {
   }
 }
 
+// Registra el componente personalizado, lo cual permite utilizarlo como un elemento personalizado
 customElements.define('product-card', ProductCard);

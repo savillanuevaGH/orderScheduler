@@ -1,9 +1,18 @@
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
-
+    // Crea el componenente
     const shadow = this.attachShadow({ mode: 'open' });
 
+    // Une el componente con los estilos externos
+    const linkElem = document.createElement('link');
+    linkElem.setAttribute('rel', 'stylesheet');
+    linkElem.setAttribute('href', '/styles/header-component.css');
+
+    shadow.appendChild(linkElem);
+    shadow.appendChild(header);
+
+    // Crear la estructura del componente
     const header = document.createElement('header');
     header.innerHTML = `
       <h2 id="header-title">APP Pedidos i2t</h2>
@@ -26,13 +35,7 @@ class HeaderComponent extends HTMLElement {
       </div>
     `;
 
-    const linkElem = document.createElement('link');
-    linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', '/styles/header-component.css');
-
-    shadow.appendChild(linkElem);
-    shadow.appendChild(header);
-
+    // Selecciona los elementos del componente
     const loginBtn = shadow.getElementById('login-btn');
     const registerBtn = shadow.getElementById('register-btn');
     const profileBtn = shadow.getElementById('profile-btn');
@@ -41,6 +44,7 @@ class HeaderComponent extends HTMLElement {
     const menuItem = dropdownBtn.parentElement;
     const menuToggle = shadow.getElementById('menu-toggle');
 
+    // Eventos de los botones del headerComponent
     loginBtn.addEventListener('click', () => {
       sessionStorage.setItem('navigateTo', 'login');
       window.location.assign('/pages/register.html');
@@ -78,4 +82,5 @@ class HeaderComponent extends HTMLElement {
   }
 }
 
+// Registra el componente personalizado, lo cual permite utilizarlo como un elemento personalizado
 customElements.define('header-component', HeaderComponent);
