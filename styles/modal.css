@@ -43,19 +43,63 @@ textarea {
   box-sizing: border-box;
 }
 
+.buttons {
+  margin: .3rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.addFavoriteBtn {
+  padding: 6px;
+  width: 2em;
+  height: 2em;
+  margin-top: 10px;
+  margin-left: 3.215rem;
+  margin-bottom: 2%;
+
+  font-size: 1.1em;
+  text-align: center;
+  line-height: 1.2;
+  align-items: center;
+
+  color: white;
+  background-color: var(--clr-vargrey);
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darkgray;
+  }
+
+  /* &:active {
+    color: crimson;
+  } */
+}
+
+.addFavoriteBtn.favorite-added {
+  color: crimson; /* color cuando se agrega a favoritos */
+}
+
 #add-product-button {
   padding: 8px;
   margin-top: 10px;
   margin-left: 3.215rem;
   margin-bottom: 2%;
-  background-color: var(--clr-l-green);
+
+  text-align: center;
+  line-height: 1.2;
+
   color: white;
+  background-color: var(--clr-l-green);
   border: none;
   cursor: pointer;
-
-  position: absolute;
-  bottom: 0;
-  right: 0;
 
   &:hover {
     background-color: #43ac43;

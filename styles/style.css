@@ -2,6 +2,7 @@
 @import url(/styles/header-component.css);
 
 @import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 :root {
   --clr-mustard: #f9d263;
@@ -33,4 +34,12 @@ body {
   font-family: "General Sans", sans-serif;
 
   background: url("/img/appBackground.webp") no-repeat center center fixed;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }

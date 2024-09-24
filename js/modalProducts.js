@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       products.forEach(product => {
         const productCard = document.createElement('product-card');
+        productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');

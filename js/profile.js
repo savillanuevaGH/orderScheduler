@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>${product.description}</p>
         <p>Semana: ${product.week}, Día: ${product.day}</p>
         <p>Fecha de eliminación: ${product.removalDate}</p>
+        <p>${product.isFavorite ? 'Agregado a favoritos' : 'No agregado a favoritos'}</p>
       `;
       historyContainer.appendChild(productCard);
     });

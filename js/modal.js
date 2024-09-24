@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('week-day-modal');
   const closeModalBtn = document.getElementById('close-modal');
+  const addFavoriteBtn = document.querySelector('#add-favorite-button');
   const addProductBtn = document.getElementById('add-product-button');
   const historyModal = document.getElementById('historyModal');
   const historyContainer = document.getElementById('history-container');
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    addFavoriteBtn.classList.remove('favorite-added');
   });
 
   // Función para abrir el modal del historial de pedidos
@@ -35,7 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-history').addEventListener('click', closeHistoryModal);
   };
 
-  
+  // Agregar a favoritos, cambia el color del botón
+  addFavoriteBtn.addEventListener('click', () => {
+    addFavoriteBtn.classList.toggle('favorite-added');
+    if (addFavoriteBtn.classList.contains('favorite-added')) {
+      alert(`Producto "${currentProductCard.getAttribute('title')}" agregado a Favoritos`);
+    }
+  });
 
   const dayIndexMapping = {
     'Lunes': 1,
@@ -64,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         description: currentProductCard.getAttribute('description'),
         week: parseInt(selectedWeek, 10),
         day: selectedDay,
-        observation: observationText
+        observation: observationText,
+        isFavorite: addFavoriteBtn.classList.contains('favorite-added')
       };
 
       let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
@@ -95,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>${product.description}</p>
         <p>Semana: ${product.week}, Día: ${product.day}</p>
         <p>Fecha de eliminación: ${product.removalDate}</p>
+        <p>${product.isFavorite ? 'Agregado a favoritos' : 'No agregado a favoritos'}</p>
       `;
       historyContainer.appendChild(productCard);
     });
