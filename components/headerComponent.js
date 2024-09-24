@@ -13,6 +13,7 @@ class HeaderComponent extends HTMLElement {
           <li>
             <button id="login-btn">Entrar</button>
             <button id="register-btn">Registrarse</button>
+            <button id="profile-btn">Mi Perfil</button>
           </li>
           <li class="menu-item">
             <button class="dropdown-btn">Pedidos</button>
@@ -34,6 +35,7 @@ class HeaderComponent extends HTMLElement {
 
     const loginBtn = shadow.getElementById('login-btn');
     const registerBtn = shadow.getElementById('register-btn');
+    const profileBtn = shadow.getElementById('profile-btn');
     const headerTitle = shadow.getElementById('header-title');
     const dropdownBtn = shadow.querySelector('.dropdown-btn');
     const menuItem = dropdownBtn.parentElement;
@@ -48,6 +50,10 @@ class HeaderComponent extends HTMLElement {
       sessionStorage.setItem('navigateTo', 'register');
       window.location.assign('/pages/register.html');
     });
+
+    profileBtn.addEventListener('click', () => {
+      window.location.assign('pages/profile.html')
+    })
 
     headerTitle.addEventListener('click', () => {
       window.location.assign('/index.html');

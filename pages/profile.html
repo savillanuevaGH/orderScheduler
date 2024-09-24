@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Pedidos i2t - Mi Perfil</title>
+    <link rel="stylesheet" href="/styles/profile.css">
+    <script src="/components/headerComponent.js" defer></script>
+    <script src="/js/profile.js" defer></script>
+</head>
+<body>
+    <header-component></header-component>
+    <main>
+        <fieldset class="container">
+            <!-- Info  del usuario -->
+            <legend><h3>Perfil de usuario</h3></legend>
+            
+             <div class="item">
+                <!-- Nombre del usuario -->
+                <p id="username">Nombre de usuario: </p><input type="text" id="username-value" value="Nombre Ejemplo" readonly> 
+             </div>
+             <div class="item">
+                <!-- Email del usuario -->
+                <p id="user-email">Correo Electrónico: </p><input type="text" id="user-email-value" value="CorreoEjemplo@example.com" readonly>
+             </div>
+             <div class="item">
+                <!-- Acerca de mi -->
+                <p id="about-me">Acerca de mi: </p><input type="text" id="about-me-value" value="Soy un ejemplo de un about-me..." readonly>
+             </div>
+             <div class="item">
+                <!-- Consultar historial de pedidos -->
+                <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
+             </div>
+            <!-- Botón para editar -->
+            <button id="edit-btn">Editar</button>
+            <!-- Botón de guardar cambios (oculto por defecto) -->
+            <button id="save-btn" style="display: none;">Guardar cambios</button>
+        </fieldset>
+    </main>
+    <!-- Modal para ver el historial de pedidos -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+          <span class="close-history" id="close-history">&times;</span>
+          <h4>Historial de Pedidos</h4>
+          <div id="history-container"></div>
+        </div>
+      </div>
+</body>
+</html>
