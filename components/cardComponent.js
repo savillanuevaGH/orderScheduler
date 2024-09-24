@@ -12,6 +12,9 @@ class ProductCard extends HTMLElement {
     const container = document.createElement('div');
     container.innerHTML = `
       <div class="card">
+        <div class="stock">
+          <p>Stock: </p>
+        </div>
         <img src="https://via.placeholder.com/300" alt="Product Image">
         <div class="card-content">
           <h4 class="card-title">Titulo</h4>
@@ -94,6 +97,7 @@ class ProductCard extends HTMLElement {
   }
 
   connectedCallback() {
+    const stockElement = this.shadowRoot.querySelector('.stock');
     const imgElement = this.shadowRoot.querySelector('img');
     const titleElement = this.shadowRoot.querySelector('.card-title');
     const descriptionElement = this.shadowRoot.querySelector('.card-description');
@@ -102,6 +106,7 @@ class ProductCard extends HTMLElement {
     const weekDayInfo = this.shadowRoot.querySelector('.week-day-info');
     const viewProductBtn = this.shadowRoot.querySelector('.view-product-btn');
 
+    stockElement.textContent = this.getAttribute('stock' || 'Stock: XX');
     imgElement.src = this.getAttribute('image') || 'https://via.placeholder.com/300';
     titleElement.textContent = this.getAttribute('title') || 'Titulo';
     descriptionElement.textContent = this.getAttribute('description') || 'Descripción';

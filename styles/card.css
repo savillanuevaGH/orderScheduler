@@ -19,6 +19,15 @@
   box-sizing: border-box;
 }
 
+.stock {
+  padding: .2rem;
+
+  font-size: .8em;
+  font-weight: 600;
+
+  background-color: rgba(180, 180, 180, 0.5);
+}
+
 .view-product-btn {
   grid-area: verProducto;
   width: 100%;
@@ -82,8 +91,9 @@ img {
 
 .add-button, .del-button {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
+  margin: 5px;
 
   width: 20px;
   height: 20px;
