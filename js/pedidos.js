@@ -2,6 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const weekProductsContainer = document.getElementById('week-products');
   const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
+  import('./utils/modal.js').then(module => {
+    const  { modalFunction } = module;
+    modalFunction();
+  });
+
+  import('./utils/modal.js').then(module => {
+    const  { historyModal } = module;
+    historyModal();
+  });
+
+  import('../components/headerComponent.js');
+  import('../components/cardComponent.js');
+
   // Mapeo de días a índices
   const dayIndexMapping = {
     'Lunes': 1,

@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>APP Pedidos i2t - Mis Pedidos</title>
-    <link rel="stylesheet" href="/styles/pedidos.css" />
-    <script src="/components/headerComponent.js" defer></script>
+    <link rel="stylesheet" href="/styles/pages/pedidos.css"/>
     <script src="/js/modalProducts.js" defer></script>
-    <script src="/js/modal.js" defer></script>
     <script src="/js/pedidos.js" defer></script>
-    <script src="/components/cardComponent.js" defer></script>
   </head>
   <body>
     <header-component></header-component>
@@ -63,6 +60,9 @@
         <label for="observacion">Observacion</label>
         <textarea type="text" name="observacion" id="observation" placeholder="Agregar un comentario"></textarea>
 
+        <button id="add-favorite-button" class="addFavoriteBtn">
+          <span class="material-symbols-outlined">favorite</span>
+        </button>
         <button id="add-product-button">Agregar Producto</button>
       </div>
     </div>

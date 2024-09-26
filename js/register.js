@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginSection = document.getElementById('login-section');
   const registerSection = document.getElementById('register-section');
 
+  import('../components/headerComponent.js');
+
   if (navigateTo === 'login') {
     loginSection.classList.add('fade-in');
     loginSection.removeAttribute('hidden');

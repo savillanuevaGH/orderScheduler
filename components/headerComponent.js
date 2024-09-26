@@ -4,14 +4,6 @@ class HeaderComponent extends HTMLElement {
     // Crea el componenente
     const shadow = this.attachShadow({ mode: 'open' });
 
-    // Une el componente con los estilos externos
-    const linkElem = document.createElement('link');
-    linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', '/styles/header-component.css');
-
-    shadow.appendChild(linkElem);
-    shadow.appendChild(header);
-
     // Crear la estructura del componente
     const header = document.createElement('header');
     header.innerHTML = `
@@ -34,6 +26,14 @@ class HeaderComponent extends HTMLElement {
         </ul>
       </div>
     `;
+
+    // Une el componente con los estilos externos
+    const linkElem = document.createElement('link');
+    linkElem.setAttribute('rel', 'stylesheet');
+    linkElem.setAttribute('href', '/styles/header-component.css');
+
+    shadow.appendChild(linkElem);
+    shadow.appendChild(header);
 
     // Selecciona los elementos del componente
     const loginBtn = shadow.getElementById('login-btn');

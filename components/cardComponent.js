@@ -6,7 +6,7 @@ class ProductCard extends HTMLElement {
    // Une el componente con los estilos externos
     const linkElem = document.createElement('link');
     linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', '/styles/card.css');
+    linkElem.setAttribute('href', '/styles/card-component.css');
 
     // Crear la estructura del componente
     const container = document.createElement('div');
@@ -19,7 +19,7 @@ class ProductCard extends HTMLElement {
         <div class="card-content">
           <h4 class="card-title">Titulo</h4>
           <p class="card-description">Descripción</p>
-          <button class="add-button">+</button>
+          <button class="add-button" id="add-button">+</button>
           <button class="del-button">&times;</button>
         </div>
         <div class="week-day-info" style="display:none;"></div>
