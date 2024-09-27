@@ -33,7 +33,7 @@ export async function fetchProducts() {
       productoDelDiaContainer.innerHTML = ''; // Limpiar el contenedor
     
       const productCard = document.createElement('product-card');
-      productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
+      productCard.setAttribute('stock', Math.floor(Math.random() * 60));
       productCard.setAttribute('image', product.strMealThumb);
       productCard.setAttribute('title', product.strMeal);
       productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
@@ -49,7 +49,7 @@ export async function fetchProducts() {
     
       products.forEach(product => {
         const productCard = document.createElement('product-card');
-        productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
+        productCard.setAttribute('stock', Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
@@ -90,7 +90,7 @@ export async function fetchProductsModal() {
   
       products.forEach(product => {
         const productCard = document.createElement('product-card');
-        productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
+        productCard.setAttribute('stock', Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
