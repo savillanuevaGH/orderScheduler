@@ -7,7 +7,7 @@ class HeaderComponent extends HTMLElement {
     // Crear la estructura del componente
     const header = document.createElement('header');
     header.innerHTML = `
-      <h2 id="header-title">APP Pedidos i2t</h2>
+      <div id="header-title"><p id="orderScheduleIcon"></p><h1>orderScheduler</h1></div>
       <div class="menu-container">
         <button id="menu-toggle" class="menu-toggle">☰</button>
         <ul class="menu">

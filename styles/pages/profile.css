@@ -13,8 +13,8 @@ main {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  width: 75%;
-  height: 14em;
+  width: 78vw;
+  height: auto;
   margin: 40px auto;
   padding: 20px;
 
@@ -27,8 +27,9 @@ main {
 
 .item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 0.5rem;
+  padding: 2px;
 }
 
 legend {
@@ -53,14 +54,14 @@ p {
   padding-right: 0.5rem;
 }
 
-input[type="text"] {
+input {
   width: 300px;
   height: fit-content;
   padding: 0.4rem;
 
-  font: 1em monospace;
+  font: .8em 'Arial';
 
-  color: cadetblue;
+  border-radius: 5px;
   background: rgba(250, 250, 250, 0.5);
 }
 
@@ -69,12 +70,12 @@ input[type="text"] {
   top: 0;
   right: 0;
 
-  width: 12%;
-  height: 12%;
+  width: 14%;
+  height: 14%;
   margin: 1%;
   padding: 4px 8px;
   font-weight: bolder;
-  font-size: .5em;
+  font-size: .8em;
   line-height: 1.2;
   box-sizing: border-box;
 

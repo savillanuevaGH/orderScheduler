@@ -8,13 +8,18 @@
 #daily-product h4 {
     width: 100%;
     height: max-content;
-    padding: .2rem;
-    font-size: large;
+    padding: .3em;
+    font-size: larger;
     text-align: justify;
 
     color: var(--clr-tomato);
-    background-color: rgba(0, 0, 0, .5);
-    text-shadow: 1px 1px 10px tomato;
+    background-color: rgba(255, 99, 71, .2);
+    text-shadow: 1px 1px 2px black, -1px 1px 2px black;
+}
+
+#daily-product h4 span {
+    border-radius: 5px;
+    background-color: rgba(255, 99, 71, .1);
 }
 
 .week-products {
@@ -35,13 +40,12 @@ section {
 }
 
 section h5 {
-    margin: 2px;
     padding: 5px;
-    font-size: medium;
+    font-size: large;
 
     color: var(--clr-l-green);
-    text-shadow: 1px 1px 2px black;
-    background-color: rgba(170, 255, 0, 0.2);
+    text-shadow: 1px 1px 2px black, -1px 1px 2px black;
+    background-color: rgba(52, 168, 83, .2);
 }
 
 .products-container, .daily-product {
@@ -51,6 +55,10 @@ section h5 {
     gap: .5rem;
     padding: .5rem;
     justify-items: center;
+}
+
+.products-container {
+    background-color: rgba(0, 0, 0, .3);
 }
 
 @media (max-width: 768px) {

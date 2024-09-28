@@ -9,17 +9,32 @@ header {
   box-sizing: border-box;
   position: relative;
 
+  border-bottom: 1px solid black;
   background-color: var(--clr-mustard);
 }
 
-h2 {
-  padding: 0.5rem;
+#header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  font-size: 2rem;
-
+  font-size: 1.2em;
   text-shadow: 2px 2px 5px var(--clr-d-yellow);
 
   cursor: help;
+}
+
+#orderScheduleIcon {
+  background-image: url('../source/orderSchedulerIcon.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
 }
 
 button {
@@ -28,7 +43,7 @@ button {
 
   cursor: pointer;
 
-  font-weight: 600;
+  font-weight: 700;
   color: white;
 
   border-radius: 5px;

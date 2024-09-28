@@ -6,18 +6,21 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/products.css">
     <script src="/js/index.js" defer></script>
-    <title>APP Pedidos i2t - Inicio</title>
+    <link rel="shortcut icon" href="./source/orderSchedulerIcon.png" type="image/x-icon">
+    <title>orderScheduler - Inicio</title>
   </head>
   <body>
       <header-component></header-component>
       <main>
+        <!-- Sección que muestra el plato/platos del dia -->
         <section id="daily-product">
-          <h4>Plato del dia (<span id="today"></span>)</h4>
+          <h4>Plato del dia <span id="today"></span></h4>
           <div class="daily-product" id="daily-product-container">
             
           </div>
         </section>
-  
+        
+        <!-- Contenedor para renderizar los productos -->
         <div class="week-products">
           <section class="products">
             <h5>Productos</h5>
@@ -26,6 +29,7 @@
         </div>
       </main>
   
+      <!-- Modal para agregar productos -->
       <div id="week-day-modal" class="modal">
         <div class="modal-content">
           <span id="close-modal" class="close">&times;</span>

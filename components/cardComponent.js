@@ -144,6 +144,22 @@ class ProductCard extends HTMLElement {
         this.removeProductFromStorage(); // Eliminar el producto de localStorage
         this.removeCardFromDOM(); // Eliminar la tarjeta del DOM
       });
+
+      delButton.addEventListener('click', () => {
+        // Preguntar si se quiere eliminar el producto
+        if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+          // Eliminar el producto del localStorage
+          const storedProducts = JSON.parse(localStorage.getItem('storedProducts'));
+          const index = storedProducts.findIndex(p => p.title === this.getAttribute('title'));
+          if (index !== -1) {
+            storedProducts.splice(index, 1);
+            localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
+          }
+  
+          // Eliminar el producto de la vista de pedidos.html
+          this.remove();
+        }
+      });
     }
   }
 }

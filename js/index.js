@@ -38,6 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fechaActual) {
       const today = new Date();
       const opciones = { year: 'numeric', month: '2-digit', day: '2-digit' };
-      fechaActual.textContent = today.toLocaleDateString('es-ES', opciones);
+      fechaActual.textContent = '(' + today.toLocaleDateString('es-ES', opciones) + ')';
     }
 });

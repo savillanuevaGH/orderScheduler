@@ -1,8 +1,8 @@
-# APP Pedidos i2t
+# orderScheduler
 
 ## Descripción
 
-La APP Pedidos i2t es una aplicación web que permite a los usuarios crear y gestionar sus pedidos de comida. La aplicación cuenta con una interfaz de usuario intuitiva y fácil de usar, y ofrece una variedad de características para que los usuarios puedan personalizar sus pedidos.
+orderScheduler es una aplicación web que permite a los usuarios crear y gestionar sus pedidos de comida. La aplicación cuenta con una interfaz de usuario intuitiva y fácil de usar, y ofrece una variedad de características para que los usuarios puedan personalizar sus pedidos.
 Actualmente solo son las vistas que estan conectadas a la MealAPI, para poder visualizar algo.
 
 ## Características
@@ -45,7 +45,7 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
 3. Realiza los cambios y envía un pull request
 
 ## Versión
-(1.0.0)
+1.0.1
 
 ## Autores
 

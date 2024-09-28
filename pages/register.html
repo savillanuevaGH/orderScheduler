@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/pages/register.css"/>
-    <title>APP COMIDA i2t - Registrar Usuario</title>
+    <link rel="shortcut icon" href="../source/orderSchedulerIcon.png" type="image/x-icon">
+    <title>orderScheduler - Registrar Usuario</title>
   </head>
   <style>
     .fade-in {
@@ -23,8 +24,8 @@
   <body>
     <header-component></header-component>
     <main>
-      <div id="register-section" class="register" hidden>
-        <h3>Crear cuenta de Usuario</h3>
+      <fieldset id="register-section" class="register" hidden>
+        <legend>Crear cuenta de Usuario</legend>
         <h5>Ingrese los datos para crear su cuenta.</h5>
         <form id="register-form">
           <div class="register-item">
@@ -90,10 +91,10 @@
             >¿Ya tienes cuenta? Toca aquí para ingresar.</a
           >
         </div>
-      </div>
+      </fieldset>
 
-      <div id="login-section" class="register" hidden>
-        <h3>Entrar en su Cuenta.</h3>
+      <fieldset id="login-section" class="register" hidden>
+        <legend>Entrar en su Cuenta</legend>
         <h5>Ingrese los datos de su cuenta para ingresar.</h5>
         <form id="register-form">
           <div class="register-item">
@@ -136,7 +137,7 @@
             >¿No tienes cuenta? Toca aqui para crear una.</a
           >
         </div>
-      </div>
+      </fieldset>
     </main>
     <script src="/js/register.js" defer></script>
   </body>

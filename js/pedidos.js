@@ -69,39 +69,42 @@ document.addEventListener('DOMContentLoaded', () => {
       if (productsForDay.length > 0) {
         hasProducts = true;
         productsForDay.forEach(product => {
-          // Crea una productCard y asigna los datos recuperados de localStorage
           const productCard = document.createElement('product-card');
-          productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
+          productCard.setAttribute('stock', Math.floor(Math.random() * 60));
           productCard.setAttribute('title', product.title);
           productCard.setAttribute('image', product.image);
           productCard.setAttribute('description', product.description);
           productCard.setAttribute('show-add-button', 'false');
           productCard.setAttribute('show-del-button', 'true');
 
-          // Manejo del botón de eliminar
-          productCard.shadowRoot.querySelector('.del-button').addEventListener('click', () => {
-            // Confirmar la eliminación
-            if (confirm(`¿Eliminar el producto ${product.title}?`)) {
-              // Eliminar del localStorage
-              storedProducts = storedProducts.filter(p => p.title !== product.title);
-              localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
-              
-              // Remover del DOM
-              productCard.remove();
-              
-              // Si ya no quedan productos en esta sección, eliminarla
-              if (productsContainer.children.length === 0) {
-                section.remove();
-              }
-              
-              // Si ya no quedan productos en la semana, eliminar el contenedor de la semana
-              if (!weekContainer.querySelector('.day-section')) {
-                weekContainer.remove();
-              }
-            }
-          });
-
           productsContainer.appendChild(productCard);
+
+          if (productCard.shadowRoot) {
+            productCard.shadowRoot.querySelector('.del-button').addEventListener('click', () => {
+              console.log('Evento del-button ejecutado');
+              // Confirmar la eliminación
+              if (confirm(`¿Eliminar el producto ${product.title}?`)) {
+                // Eliminar del localStorage
+                storedProducts = storedProducts.filter(p => p.title !== product.title);
+                console.log('Productos después de eliminar:', storedProducts);
+                localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
+                
+                // Remover del DOM
+                productCard.remove();
+                console.log('Productos después de eliminar:', productsContainer.children);
+                
+                // Si ya no quedan productos en esta sección, eliminarla
+                if (productsContainer.children.length === 0) {
+                  section.remove();
+                }
+                
+                // Si ya no quedan productos en la semana, eliminar el contenedor de la semana
+                if (!weekContainer.querySelector('.day-section')) {
+                  weekContainer.remove();
+                }
+              }
+            });
+          }
         });
       }
 
