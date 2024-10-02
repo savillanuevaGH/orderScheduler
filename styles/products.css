@@ -50,8 +50,8 @@ section h5 {
 
 .products-container, .daily-product {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: minmax(200px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: minmax(220px, auto);
     gap: .5rem;
     padding: .5rem;
     justify-items: center;

@@ -61,8 +61,8 @@ input {
 
   font: .8em 'Arial';
 
-  border-radius: 5px;
-  background: rgba(250, 250, 250, 0.5);
+  border: none;
+  background: rgba(218, 165, 32, .2);
 }
 
 #edit-btn {

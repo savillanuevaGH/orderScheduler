@@ -45,19 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
       modalContainer.innerHTML = ''; // Limpiar antes de renderizar
   
       products.forEach(product => {
-        const productCard = document.createElement('product-card');
-        productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
-        productCard.setAttribute('image', product.strMealThumb);
-        productCard.setAttribute('title', product.strMeal);
-        productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
-        productCard.setAttribute('show-add-button', 'false');
-        productCard.setAttribute('show-del-button', 'true');
-  
-        modalContainer.appendChild(productCard);
+        const productContainer = document.createElement('div');
+        const productStock = Math.floor(Math.random() * 60);
+        const productTitle = product.strMeal;
+        const productDescription = product.strInstructions.substring(0, 30) + '...';
+        const editBtn = document.createElement('button');
+        const deleteBtn = document.createElement('button');
+        const buttons = document.createElement('div');
 
-        productCard.shadowRoot.querySelector('.del-button').addEventListener('click', () => {
-          confirm(`¿Eliminar el producto ${product.strMeal}?`)
-        });
+        editBtn.innerText = 'Editar';
+        deleteBtn.innerHTML= 'Eliminar';
+
+        buttons.innerHTML = `
+        <button class="btn" id="edit-btn-${product.idMeal}" style="background-color: darkgrey">EDITAR</button>
+        <button class="btn" id="delete-btn-${product.idMeal}" style="background-color: tomato">ELIMINAR</button>
+        `;
+
+        productContainer.innerHTML = `
+        <h5>Stock:<br/><p style="color: firebrick";>${productStock}</p></h5>
+        <h5>Producto:<br/><p style="color: skyblue";>${productTitle}</p></h5>
+        <h5>Descripción:<br/><p style="color: gray";>${productDescription}</p></h5>
+        `;
+
+        productContainer.appendChild(buttons);
+
+        productContainer.classList.add('product-list');
+
+  
+        modalContainer.appendChild(productContainer);
       });
     }
   
