@@ -20,12 +20,10 @@ header {
 
   font-size: 1.2em;
   text-shadow: 2px 2px 5px var(--clr-d-yellow);
-
-  cursor: help;
 }
 
-#orderScheduleIcon {
-  background-image: url('../source/orderSchedulerIcon.png');
+#orderSchedulerIcon {
+  background-image: url('../public/orderSchedulerIcon.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,9 +35,22 @@ header {
   height: 100px;
 }
 
+#orderSchedulerIcon[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .8em;
+  color: var(--clr-d-yellow);
+  background-color: var(--clr-bordeau);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 button {
-  margin-right: 0.5rem;
-  padding: 0.6rem;
+  margin-right: .5rem;
+  padding: .6rem;
 
   cursor: pointer;
 
@@ -47,20 +58,27 @@ button {
   color: white;
 
   border-radius: 5px;
-  border: none;
+  border: 1px solid transparent;
   background-color: var(--clr-bordeau);
   box-shadow: 0 0 5px black;
 
+  transition: transform .2s ease-in-out,
+  background-color .3s ease-in-out,
+  box-shadow .3s ease-in-out;
+
   &:hover {
-    background-color: #521717;
+    background-color: rgb(82, 23, 23);
+    border: 1px solid black;
+
+    transform: translateY(-5%);
   }
 }
 
 #adminProducts {
-  background-color: #ddba58;
+  background-color: rgb(221, 186, 88);
 
   &:hover {
-    background-color: #b39646;
+    background-color: rgb(179, 150, 70);
   }
 }
 

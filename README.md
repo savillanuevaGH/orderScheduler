@@ -3,7 +3,7 @@
 ## Descripción
 
 orderScheduler es una aplicación web que permite a los usuarios crear y gestionar sus pedidos de comida. La aplicación cuenta con una interfaz de usuario intuitiva y fácil de usar, y ofrece una variedad de características para que los usuarios puedan personalizar sus pedidos.
-Actualmente solo son las vistas que estan conectadas a la MealAPI, para poder visualizar algo.
+Actualmente solo son las vistas que estan conectadas a la MealAPI, para poder visualizar los productos.
 
 ## Características
 
@@ -11,7 +11,6 @@ Actualmente solo son las vistas que estan conectadas a la MealAPI, para poder vi
 * Seleccionar entre una variedad de productos y opciones de personalización
 * Ver el historial de pedidos y realizar cambios en tiempo real
 * Interfaz de usuario intuitiva y fácil de usar
-* Diseño responsivo para dispositivos móviles y de escritorio
 
 ## Tecnologías utilizadas
 
@@ -28,7 +27,7 @@ Actualmente solo son las vistas que estan conectadas a la MealAPI, para poder vi
 * `js/`: carpeta que contiene los archivos de JavaScript
 * `components/`: carpeta que contiene los componentes de la aplicación (header, card, etc.)
 * `pages/`: carpeta que contiene las páginas de la aplicación (register, profile, etc.)
-* `img/`: carpeta que contiene las imágenes utilizadas en la aplicación
+* `public/`: carpeta que contiene el contenido multimedia utilizado en la aplicación
 
 ## Instalación y ejecución
 
@@ -45,7 +44,7 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
 3. Realiza los cambios y envía un pull request
 
 ## Versión
-1.0.1
+1.0.3
 
 ## Autores
 

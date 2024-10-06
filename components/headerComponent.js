@@ -7,11 +7,11 @@ class HeaderComponent extends HTMLElement {
     // Crear la estructura del componente
     const header = document.createElement('header');
     header.innerHTML = `
-      <div id="header-title"><p id="orderScheduleIcon"></p><h1>orderScheduler</h1></div>
+      <div id="header-title"><p id="orderSchedulerIcon" title="Haz click para volver al Inicio"></p><h1>orderScheduler</h1></div>
       <div class="menu-container">
         <button id="menu-toggle" class="menu-toggle">☰</button>
         <ul class="menu">
-          <li>
+          <li id="header-buttons">
             <button id="login-btn">Entrar</button>
             <button id="register-btn">Registrarse</button>
             <button id="profile-btn">Mi Perfil</button>
@@ -39,7 +39,7 @@ class HeaderComponent extends HTMLElement {
     const loginBtn = shadow.getElementById('login-btn');
     const registerBtn = shadow.getElementById('register-btn');
     const profileBtn = shadow.getElementById('profile-btn');
-    const headerTitle = shadow.getElementById('header-title');
+    const headerIcon = shadow.getElementById('orderSchedulerIcon');
     const dropdownBtn = shadow.querySelector('.dropdown-btn');
     const menuItem = dropdownBtn.parentElement;
     const menuToggle = shadow.getElementById('menu-toggle');
@@ -59,7 +59,7 @@ class HeaderComponent extends HTMLElement {
       window.location.assign('/pages/profile.html')
     })
 
-    headerTitle.addEventListener('click', () => {
+    headerIcon.addEventListener('click', () => {
       window.location.assign('/index.html');
     });
 

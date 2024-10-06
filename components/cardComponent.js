@@ -17,11 +17,11 @@ class ProductCard extends HTMLElement {
         </div>
         <img src="https://via.placeholder.com/300" alt="Product Image">
         <div class="card-content">
-          <h4 class="card-title">Titulo</h4>
-          <p class="card-description">Descripción</p>
-          <button class="add-button" id="add-button">+</button>
-          <button class="del-button">&times;</button>
+          <h4 class="card-title">Titulo</h4><span class="type" title="Categoria">TIPO</span>
+          <p class="card-description" title="Descripción del producto">Descripción</p>
         </div>
+          <button class="add-button" id="add-button" title="Agregar producto">+</button>
+          <button class="del-button" id="del-button" title="Eliminar producto">&times;</button>
         <div class="week-day-info" style="display:none;"></div>
         <button class="view-product-btn" style="display:none;">Ver Producto</button>
       </div>
@@ -101,6 +101,7 @@ class ProductCard extends HTMLElement {
     const stockElement = this.shadowRoot.querySelector('.stock');
     const imgElement = this.shadowRoot.querySelector('img');
     const titleElement = this.shadowRoot.querySelector('.card-title');
+    const categoryElement = this.shadowRoot.querySelector('.type');
     const descriptionElement = this.shadowRoot.querySelector('.card-description');
     const addButton = this.shadowRoot.querySelector('.add-button');
     const delButton = this.shadowRoot.querySelector('.del-button');
@@ -110,6 +111,7 @@ class ProductCard extends HTMLElement {
     stockElement.textContent = this.getAttribute('stock' || 'Stock: XX');
     imgElement.src = this.getAttribute('image') || 'https://via.placeholder.com/300';
     titleElement.textContent = this.getAttribute('title') || 'Titulo';
+    categoryElement.textContent = this.getAttribute('type') || 'Tipo';
     descriptionElement.textContent = this.getAttribute('description') || 'Descripción';
 
     const week = this.getAttribute('week');

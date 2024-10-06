@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  background: url("/source/appBackground.webp") no-repeat center center fixed;
+  background: url("/public/appBackground.webp") no-repeat center center fixed;
 }
 
 .material-symbols-outlined {

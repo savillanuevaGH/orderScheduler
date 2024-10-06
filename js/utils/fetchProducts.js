@@ -36,6 +36,7 @@ export async function fetchProducts() {
       productCard.setAttribute('stock', Math.floor(Math.random() * 60));
       productCard.setAttribute('image', product.strMealThumb);
       productCard.setAttribute('title', product.strMeal);
+      productCard.setAttribute('type', product.strCategory);
       productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
       productCard.setAttribute('show-add-button', 'true');
       productCard.setAttribute('show-del-button', 'false');
@@ -52,6 +53,7 @@ export async function fetchProducts() {
         productCard.setAttribute('stock', Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
+        productCard.setAttribute('type', product.strCategory);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
         productCard.setAttribute('show-add-button', 'true');
         productCard.setAttribute('show-del-button', 'false');
@@ -93,6 +95,7 @@ export async function fetchProductsModal() {
         productCard.setAttribute('stock', Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
+        productCard.setAttribute('type', product.strCategory);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
         productCard.setAttribute('show-add-button', 'true');
         productCard.setAttribute('show-del-button', 'false');
