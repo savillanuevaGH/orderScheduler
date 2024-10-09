@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/pages/profile.css">
     <script src="/js/profile.js" defer></script>
-    <link rel="shortcut icon" href="../source/orderSchedulerIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/orderSchedulerIcon.png" type="image/x-icon">
     <title>orderScheduler - Mi Perfil</title>
 </head>
 <body>
@@ -24,7 +24,12 @@
                 <p id="user-email">Correo Electrónico: </p><input type="email" id="user-email-value" value="CorreoEjemplo@example.com" readonly>
              </div>
              <div class="item">
-                <p>N° de Documento (DNI): </p><input type="number" id="user-dni-value" value="87654321" readonly>
+               <!-- Contraseña -->
+                <p id="user-password">Contraseña: </p><input type="password" id="user-password-value" value="ContraseñaEjemplo" readonly>
+             </div>
+             <div class="item">
+                <!-- N° de Documento -->
+                <p>N° de Documento (DNI): </p><input type="number" id="user-dni-value" value="87654321" readonly maxlength="8">
              </div>
              <div class="item">
                 <!-- Acerca de mi -->

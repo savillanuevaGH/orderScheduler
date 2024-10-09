@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/styles/pages/pedidos.css"/>
     <script src="/js/modalProducts.js" defer></script>
     <script src="/js/pedidos.js" defer></script>
-    <link rel="shortcut icon" href="../source/orderSchedulerIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/orderSchedulerIcon.png" type="image/x-icon">
     <title>orderScheduler - Mis Pedidos</title>
   </head>
   <body>
@@ -14,8 +14,19 @@
     <main>
       <div class="mis-pedidos">
         <h3>MIS PEDIDOS:</h3>
-        <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
+        <div class="container">
+          <label for="weeks-selector">Selecciona la semana:</label>
+          <select name="weeks" id="weeks-selector">
+            <option value="1">Semana 1</option>
+            <option value="2">Semana 2</option>
+            <option value="3">Semana 3</option>
+            <option value="4">Semana 4</option>
+          </select>
+        </div>
+          
+            <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
       </div>
+      
       <div id="week-products"></div>
     </main>
     <button id="openModalBtn">Agregar Producto</button>

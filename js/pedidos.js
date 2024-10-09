@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const weekSelect = document.getElementById('weeks-selector');
   const weekProductsContainer = document.getElementById('week-products');
   const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
   import('./utils/modal.js').then(module => {
-    const  { modalFunction } = module;
+    const { modalFunction } = module;
     modalFunction();
   });
 
   import('./utils/modal.js').then(module => {
-    const  { historyModal } = module;
+    const { historyModal } = module;
     historyModal();
   });
 
@@ -28,24 +29,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let storedProducts = JSON.parse(localStorage.getItem('storedProducts')) || [];
   console.log('Productos almacenados:', storedProducts);
 
-  if (storedProducts.length === 0) {
-    weekProductsContainer.innerHTML = '<p>No hay productos agregados.</p>';
-    return; // Salir si no hay productos
-  }
+  // Función para mostrar productos de una semana específica
+  function displayWeekProducts(week) {
+    weekProductsContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+    let hasProducts = false; // Variable para verificar si hay productos en la semana
 
-  for (let aux = 1; aux <= 4; aux++) {
-    const title = document.createElement('h4');
-    title.textContent = 'Semana ' + aux;
-
+    // Crear contenedor para la semana
     const weekContainer = document.createElement('div');
     weekContainer.classList.add('week-products');
-    weekContainer.setAttribute('data-week', aux);
+    weekContainer.setAttribute('data-week', week);
+
+    const title = document.createElement('h4');
+    title.textContent = 'Semana ' + week;
 
     const heading = document.createElement('div');
     heading.classList.add('heading');
     heading.appendChild(title);
 
-    let hasProducts = false; // Variable para verificar si hay productos en la semana
+    weekProductsContainer.appendChild(heading);
 
     // Crear secciones para los días de la semana
     days.forEach((day) => {
@@ -61,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
       productsContainer.classList.add('products-container');
 
       // Filtrar los productos para el día y la semana actual
-      const productsForDay = storedProducts.filter(product => 
-        product.week === aux && product.day === dayIndex
+      const productsForDay = storedProducts.filter(product =>
+        product.week === week && product.day === dayIndex
       );
-      console.log(`Productos para Semana ${aux}, Día ${day}:`, productsForDay);
+      console.log(`Productos para Semana ${week}, Día ${day}:`, productsForDay);
 
       if (productsForDay.length > 0) {
         hasProducts = true;
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const productCard = document.createElement('product-card');
           productCard.setAttribute('stock', Math.floor(Math.random() * 60));
           productCard.setAttribute('title', product.title);
+          productCard.setAttribute('type', product.type);
           productCard.setAttribute('image', product.image);
           productCard.setAttribute('description', product.description);
           productCard.setAttribute('show-add-button', 'false');
@@ -81,24 +83,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (productCard.shadowRoot) {
             productCard.shadowRoot.querySelector('.del-button').addEventListener('click', () => {
-              console.log('Evento del-button ejecutado');
-              // Confirmar la eliminación
               if (confirm(`¿Eliminar el producto ${product.title}?`)) {
                 // Eliminar del localStorage
                 storedProducts = storedProducts.filter(p => p.title !== product.title);
-                console.log('Productos después de eliminar:', storedProducts);
                 localStorage.setItem('storedProducts', JSON.stringify(storedProducts));
-                
-                // Remover del DOM
                 productCard.remove();
-                console.log('Productos después de eliminar:', productsContainer.children);
-                
-                // Si ya no quedan productos en esta sección, eliminarla
+
+                // Si no quedan productos en el contenedor del día, eliminar la sección
                 if (productsContainer.children.length === 0) {
                   section.remove();
                 }
-                
-                // Si ya no quedan productos en la semana, eliminar el contenedor de la semana
+
+                // Si no quedan productos en la semana, eliminar el contenedor de la semana
                 if (!weekContainer.querySelector('.day-section')) {
                   weekContainer.remove();
                 }
@@ -120,13 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Solo añadir el contenedor de la semana si tiene secciones con productos
     if (hasProducts) {
-      weekProductsContainer.appendChild(heading);
       weekProductsContainer.appendChild(weekContainer);
+    } else {
+      weekProductsContainer.innerHTML = '<p>No hay productos para esta semana.</p>';
     }
   }
 
-  // Si no hay productos, mostrar un mensaje
-  if (storedProducts.length === 0) {
-    weekProductsContainer.innerHTML = '<p>No hay productos agregados...</p>';
-  }
+  // Mostrar productos de la semana seleccionada al cambiar el select
+  weekSelect.addEventListener('change', (event) => {
+    const selectedWeek = parseInt(event.target.value, 10);
+    displayWeekProducts(selectedWeek);
+  });
+
+  // Mostrar productos de la semana inicial (por ejemplo, la semana 1)
+  displayWeekProducts(parseInt(weekSelect.value, 10));
 });

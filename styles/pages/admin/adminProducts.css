@@ -51,6 +51,16 @@ h3 {
   padding: .4rem;
 }
 
+.days {
+  display: flex;
+  gap: .8rem;
+  border-top: 2px solid var(--clr-d-yellow);
+}
+
+.days p {
+  font-size: .8em;
+}
+
 input {
   padding: .3rem;
   width: 100%;
@@ -58,11 +68,9 @@ input {
   border: 0.3px solid gray;
   border-radius: 0 0 6px 6px;
   background-color: rgba(255, 255, 255, 0.8);
-  text-shadow: 0 0 1px black;
 
   font-weight: 500;
   font-size: .8rem;
-  color: black;
 }
 
 button {

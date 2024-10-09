@@ -7,7 +7,7 @@
     <script src="/components/headerComponent.js" defer></script>
     <script src="/components/cardComponent.js" defer></script>
     <script src="/js/admin/adminProducts.js" defer></script>
-    <link rel="shortcut icon" href="../../source/orderSchedulerIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../public/orderSchedulerIcon.png" type="image/x-icon">
     <title>orderScheduler - Administrar Productos</title>
 </head>
 <body>
@@ -32,8 +32,17 @@
                 <input type="number" name="Stock" id="productStock" placeholder="Stock" required>
             </div>
             <div class="form-item">
+                <h4>Dias de disponibilidad.</h4>
+                <label for="days" class="days">
+                    <p>Lunes <input type="checkbox" name="lunes" id="lunes"></p>
+                    <p>Martes <input type="checkbox" name="martes" id="martes"></p>
+                    <p>Miercoles <input type="checkbox" name="miercoles" id="miercoles"></p>
+                    <p>Jueves <input type="checkbox" name="jueves" id="jueves"></p>
+                    <p>Viernes <input type="checkbox" name="viernes" id="viernes"></p>
+                </label>
+            </div>
+            <div class="form-item">
                 <button type="submit" id="submitBtn">Subir Producto</button>
-                <button type="submit" id="submitDPBtn">Subir como Producto del Dia</button>
             </div>
         </form>
     </section>

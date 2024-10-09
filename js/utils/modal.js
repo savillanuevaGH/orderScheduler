@@ -50,6 +50,7 @@ export function modalFunction() {
         title: currentProductCard.getAttribute('title'),
         image: currentProductCard.getAttribute('image'),
         description: currentProductCard.getAttribute('description'),
+        type: currentProductCard.getAttribute('type'),
         week: parseInt(selectedWeek, 10),
         day: selectedDay,
         observation: observationText,
@@ -118,6 +119,7 @@ export function openModal() {
         productCard.setAttribute('stock', 'Stock: ' + Math.floor(Math.random() * 60));
         productCard.setAttribute('image', product.strMealThumb);
         productCard.setAttribute('title', product.strMeal);
+        productCard.setAttribute('type', product.strCategory);
         productCard.setAttribute('description', product.strInstructions.substring(0, 100) + '...');
         productCard.setAttribute('show-add-button', 'true');
         productCard.setAttribute('show-del-button', 'false');
@@ -177,6 +179,7 @@ export async function historyModal() {
         <p>Semana: ${product.week}, Día: ${product.day}</p>
         <p>Fecha de eliminación: ${product.removalDate}</p>
         <p>${product.isFavorite ? 'Agregado a favoritos' : 'No agregado a favoritos'}</p>
+        <p>${product.type}</p>
       `;
       historyContainer.appendChild(productCard);
     });
