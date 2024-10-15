@@ -13,19 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputs = document.querySelectorAll('input[type="text"]');
   const passwordInput = document.querySelector('input[type="password"]');
   const dniInput = document.querySelector('input[type="number"]');
+  const wordkDays = document.querySelectorAll('input[type="checkbox"]');
 
   let editingEnabled = false;
 
-  // Función para habilitar la edición de los inputs
+  function updateCheckboxState() {
+    if (!editingEnabled) {
+      wordkDays.forEach((day) => {
+        day.classList.add('checkbox-disabled');
+      });
+    } else {
+      wordkDays.forEach((day) => {
+        day.classList.remove('checkbox-disabled');
+      });
+    }
+  }
+  
   function enableEditing() {
     editingEnabled = true;
-  inputs.forEach((input) => {
+    inputs.forEach((input) => {
       input.readOnly = false;
       passwordInput.readOnly = false;
       dniInput.readOnly = false;
-      
+      wordkDays.forEach((day) => {
+        day.readOnly = false;
+      });
     });
     saveBtn.style.display = 'block'; // Mostrar el botón de guardar cambios
+    updateCheckboxState();
   }
 
   passwordInput.addEventListener('focus', function() {
@@ -37,17 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
   passwordInput.addEventListener('blur', function() {
     this.type = 'password';
   });
+
+  wordkDays.forEach((day) => {
+    day.addEventListener('click', (e) => {
+      if (!editingEnabled) {
+        e.preventDefault();
+      }
+    });
+  });
+
   // Función para guardar los cambios
   function saveChanges() {
   // Recopilar los valores de los inputs
   alert('La operación ha culminado con éxito...');
   editingEnabled = false;
-  const userData = {};
+  const userData = {
+    days: {}
+  };
+  wordkDays.forEach((day) => {
+    userData.days[day.value] = day.checked;
+  }),
   inputs.forEach((input) => {
       userData[input.id] = input.value;
       userData[passwordInput.id] = passwordInput.value;
       userData[dniInput.id] = dniInput.value;
-  });
+    }
+  );
 
   // Enviar los datos al servidor o realizar la lógica de negocio aquí
   console.log(userData);
@@ -58,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
       passwordInput.readOnly = true;
       passwordInput.type = 'password';
       dniInput.readOnly = true;
+      wordkDays.readOnly = true;
+      wordkDays.type = 'checkbox';
   });
   saveBtn.style.display = 'none'; // Ocultar el botón de guardar cambios
   }

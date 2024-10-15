@@ -36,14 +36,33 @@
                 <p id="about-me">Acerca de mi: </p><input type="text" id="about-me-value" value="Soy un ejemplo de un about-me..." readonly>
              </div>
              <div class="item">
-                <!-- Consultar historial de pedidos -->
-                <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
+               <!-- Dias laborales -->
+                <p>Dias laborales: </p>
+                <label for="days" class="days">
+                  <div class="checkbox-container">
+                     <input type="checkbox" class="checkbox-input" name="lunes" id="lunes" value="1" checked>
+                     <label for="lunes" class="checkbox-label">Lunes</label>
+                     <input type="checkbox" class="checkbox-input" name="martes" id="martes" value="2" checked>
+                     <label for="martes" class="checkbox-label">Martes</label>
+                     <input type="checkbox" class="checkbox-input" name="miercoles" id="miercoles" value="3" checked>
+                     <label for="miercoles" class="checkbox-label">Miercoles</label>
+                     <input type="checkbox" class="checkbox-input" name="jueves" id="jueves" value="4" checked>
+                     <label for="jueves" class="checkbox-label">Jueves</label>
+                     <input type="checkbox" class="checkbox-input" name="viernes" id="viernes" value="5" checked>
+                     <label for="viernes" class="checkbox-label">Viernes</label>
+                  </div>
+                </label>
              </div>
-            <!-- Botón para editar -->
-            <button id="edit-btn">Editar</button>
-            <!-- Botón de guardar cambios (oculto por defecto) -->
-            <button id="save-btn" style="display: none;">Guardar cambios</button>
-        </fieldset>
+             <!-- Botón para editar -->
+             <button id="edit-btn">Editar</button>
+             <!-- Botón de guardar cambios (oculto por defecto) -->
+             <button id="save-btn" style="display: none;">Guardar cambios</button>
+            </fieldset>
+
+            <div class="item">
+               <!-- Consultar historial de pedidos -->
+               <button id="openHistoryModalBtn"><strong style="font-weight: bolder; font-size: larger; color: darkslategrey;">☰ </strong>Ver Historial</button>
+            </div>
     </main>
     <!-- Modal para ver el historial de pedidos -->
     <div id="historyModal" class="modal">

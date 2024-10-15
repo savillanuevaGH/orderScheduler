@@ -65,6 +65,75 @@ input {
   background: rgba(218, 165, 32, .2);
 }
 
+.days {
+  display: flex;
+  flex-direction: row;
+  padding: 6px;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para los checkboxes */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.checkbox-label {
+  margin: 0 2em 0 4px;
+  font-size: 1em;
+}
+
+.checkbox-input {
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-input:checked {
+  background-color: var(--clr-varblue);
+  border-color: var(--clr-d-yellow);
+}
+
+.checkbox-input:checked::after {
+  content: '✔';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--clr-l-green); /* Cambiar a otro color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-mustard);
+}
+
+.checkbox-input:disabled {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+  cursor: not-allowed;
+}
+
+.checkbox-input:disabled::after {
+  background-color: #ced4da;
+}
+
+.checkbox-input:disabled:checked::after {
+  background-color: #ced4da; /* Cambiar a otro color */
+}
+
 #edit-btn {
   position: absolute;
   top: 0;
